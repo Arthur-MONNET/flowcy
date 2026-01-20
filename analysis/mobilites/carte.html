@@ -1,0 +1,1046 @@
+
+
+
+
+<!doctype html>
+<html lang="fr" class="nav-no-js">
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>
+	Carte interactive pour se déplacer sur la ville d'Annecy
+</title><link rel="icon" type="image/png" href="favicon.png" /><link href="/bundles/css/base?v=Ac4phBB6_hRNrMaCIN5BfLVepjwBs_I4lSIrxTdKqN81" rel="stylesheet"/>
+
+        <script id="bund" src='/bundles/js/base?v=4__ho_OcrlCoouWrHUnRy-kInsCqFcisX3BBICWSpis1'></script>
+        <script id="master" src='/bundles/js/master?v=_UbfoGYT80SkR7Q-Un26NA0K2LNZR1OS9ZtRQG9vDHg1' defer></script>
+        <script id="bundDefer" src='/bundles/js/baseDefer?v=j9dtZEMlZ6dU0n2ZQOzvPW7xbc7v4zTsfz1qLRYATIQ1' defer></script>
+        <script id="gsap" src='/bundles/js/gsap?v=p1lIVhN0jt3nDkezN2SQ9SqJ7deUy1zQnJD9eQSmdak1' defer></script>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KMBD4MN');</script>
+    <!-- End Google Tag Manager -->
+<script type="application/ld+json">{"itemListElement":[{"item":{"@id":"https://mobilites.grandannecy.fr","@context":"http://schema.org","@type":"Thing"},"position":1,"name":"Accueil","@context":"http://schema.org","@type":"ListItem"},{"item":{"@id":"https://mobilites.grandannecy.fr/carte","@context":"http://schema.org","@type":"Thing"},"position":2,"name":"Calcul d'itinéraires et fiches horaires","@context":"http://schema.org","@type":"ListItem"}],"itemListOrder":"ItemListOrderAscending","numberOfItems":2,"@context":"http://schema.org","@type":"BreadcrumbList"}</script><meta name="robots" content="noodp" /><meta property="og:type" content="website" /><meta property="og:title" content="Carte interactive pour se déplacer sur la ville d&#39;Annecy" /><meta property="og:description" content="Découvrez la carte interactive pour se déplacer sur la ville d&#39;Annecy : en bus, en voiture, à vélo, en train à pied..." /><meta property="og:url" content="https://mobilites.grandannecy.fr/carte" /><link href="https://mobilites.grandannecy.fr/carte" rel="canonical" /><link hreflang="fr" href="https://mobilites.grandannecy.fr/carte" rel="alternate" /><link hreflang="x-default" href="https://mobilites.grandannecy.fr/carte" rel="alternate" /><meta name="description" content="Découvrez la carte interactive pour se déplacer sur la ville d&#39;Annecy : en bus, en voiture, à vélo, en train à pied..." /></head>
+<body class=''>
+    <form method="post" action="/carte" id="aspnetForm">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUINzkzNzUwMzgPZBYCZg9kFgICARBkZBYEAgIPZBYCZg8PFgIeB1Zpc2libGVoZGQCBA9kFg4CAw9kFgZmDw8WBB4LTmF2aWdhdGVVcmwFIGh0dHBzOi8vbW9iaWxpdGVzLmdyYW5kYW5uZWN5LmZyHgdUb29sVGlwBSFBY2N1ZWlsIEVjb21vYmlsaXTDqSBHcmFuZCBBbm5lY3lkZAIBDxYCHgVjbGFzcwUMbmF2QnVyZ2VyQnRuZAICD2QWAmYPZBYEAgEPFgIeBFRleHQFkTM8bGkgY2xhc3M9J25hdi1tIG5hdi1zdWJtZW51JyBpZD0nbGktMTc5Jz48c3BhbiBpZD0nbGktMTc5Jz7DgCB2w6lsbzwvc3Bhbj4NCjx1bCBjbGFzcz0nJz48bGkgY2xhc3M9J25hdi1tJyBpZD0nbGktMjE5Jz48YSBocmVmPSdodHRwczovL21vYmlsaXRlcy5ncmFuZGFubmVjeS5mci92ZWxvJyBhbHQ9J0wmIzM5O0FnZ2xvIMOgIHbDqWxvJ2lkPSduYXYtMjE5JyA+DQpMJ0FnZ2xvIMOgIHbDqWxvPC9hPjwvbGk+PGxpIGNsYXNzPSduYXYtbScgaWQ9J2xpLTIxOCc+PGEgaHJlZj0naHR0cHM6Ly9tb2JpbGl0ZXMuZ3JhbmRhbm5lY3kuZnIvdmVsb25lY3ktNjAtbWludXRlcy0xNDE2JyBhbHQ9J1bDqWxvbmVjeSA2MCBtaW51dGVzJ2lkPSduYXYtMjE4JyA+DQpWw6lsb25lY3kgNjAgbWludXRlczwvYT48L2xpPjxsaSBjbGFzcz0nbmF2LW0nIGlkPSdsaS0xOTgnPjxhIGhyZWY9J2h0dHBzOi8vbW9iaWxpdGVzLmdyYW5kYW5uZWN5LmZyL2xvY2F0aW9uLWxvbmd1ZS1kdXJlZS12ZWxvbmVjeS0xNDE3JyBhbHQ9J1bDqWxvbmVjeSwgTG9jYXRpb24gbG9uZ3VlIGR1csOpZSdpZD0nbmF2LTE5OCcgPg0KVsOpbG9uZWN5LCBMb2NhdGlvbiBsb25ndWUgZHVyw6llPC9hPjwvbGk+PGxpIGNsYXNzPSduYXYtbScgaWQ9J2xpLTE4OCc+PGEgaHJlZj0naHR0cHM6Ly9tb2JpbGl0ZXMuZ3JhbmRhbm5lY3kuZnIvcmVzZXJ2ZXItdW5lLXBsYWNlLWRlLWNvbnNpZ25lLXZlbG9uZWN5LWJveC0xMzg0JyBhbHQ9J1bDqWxvbmVjeSBCb3gsIHBvdXIgc3RhdGlvbm5lciB2b3RyZSB2w6lsbydpZD0nbmF2LTE4OCcgPg0KVsOpbG9uZWN5IEJveCwgcG91ciBzdGF0aW9ubmVyIHZvdHJlIHbDqWxvPC9hPjwvbGk+PGxpIGNsYXNzPSduYXYtbScgaWQ9J2xpLTE5MSc+PGEgaHJlZj0naHR0cHM6Ly9tb2JpbGl0ZXMuZ3JhbmRhbm5lY3kuZnIvY3ljbGlzdGUtcHJhdGlxdWUtMTM4MycgYWx0PSdDeWNsaXN0ZSBQcmF0aXF1ZSdpZD0nbmF2LTE5MScgPg0KQ3ljbGlzdGUgUHJhdGlxdWU8L2E+PC9saT48bGkgY2xhc3M9J25hdi1tJyBpZD0nbGktMjIwJz48YSBocmVmPSdodHRwczovL21vYmlsaXRlcy5ncmFuZGFubmVjeS5mci9zY2hlbWEtY3ljbGFibGUnIGFsdD0nUsOpc2VhdSBjeWNsYWJsZSdpZD0nbmF2LTIyMCcgPg0KUsOpc2VhdSBjeWNsYWJsZTwvYT48L2xpPjxsaSBjbGFzcz0nbmF2LW0nIGlkPSdsaS0yMjQnPjxzcGFuIGlkPSdsaS0yMjQnPkFpcmVzIGRlIHNlcnZpY2VzPC9zcGFuPg0KPC9saT4gPC91bD48L2xpPjxsaSBjbGFzcz0nbmF2LW0gbmF2LXN1Ym1lbnUnIGlkPSdsaS0xNzgnPjxzcGFuIGlkPSdsaS0xNzgnPkVuIGJ1czwvc3Bhbj4NCjx1bCBjbGFzcz0nJz48bGkgY2xhc3M9J25hdi1tIG1lbnVFbkNvdXJzJyBpZD0nbGktMTg1Jz48YSBocmVmPSdodHRwczovL21vYmlsaXRlcy5ncmFuZGFubmVjeS5mci9jYXJ0ZScgYWx0PSdDYWxjdWwgZCYjMzk7aXRpbsOpcmFpcmVzIGV0IGZpY2hlcyBob3JhaXJlcydpZD0nbmF2LTE4NScgPg0KQ2FsY3VsIGQnaXRpbsOpcmFpcmVzIGV0IGZpY2hlcyBob3JhaXJlczwvYT48L2xpPjxsaSBjbGFzcz0nbmF2LW0nIGlkPSdsaS0xODQnPjxhIGhyZWY9J2h0dHBzOi8vbW9iaWxpdGVzLmdyYW5kYW5uZWN5LmZyL2J1cycgYWx0PSdUb3V0ZXMgbGVzIGxpZ25lcyBkdSByw6lzZWF1J2lkPSduYXYtMTg0JyA+DQpUb3V0ZXMgbGVzIGxpZ25lcyBkdSByw6lzZWF1PC9hPjwvbGk+PGxpIGNsYXNzPSduYXYtbSBuYXYtc3VibWVudScgaWQ9J2xpLTIwOSc+PGEgaHJlZj0naHR0cHM6Ly9tb2JpbGl0ZXMuZ3JhbmRhbm5lY3kuZnIvc2licmEtYS1sYS1kZW1hbmRlLTE0MDgnIGFsdD0nU2licmEgw6AgbGEgZGVtYW5kZSdpZD0nbmF2LTIwOScgPg0KU2licmEgw6AgbGEgZGVtYW5kZTwvYT48dWwgY2xhc3M9Jyc+PGxpIGNsYXNzPSduYXYtbScgaWQ9J2xpLTIxMic+PGEgaHJlZj0naHR0cHM6Ly9tb2JpbGl0ZXMuZ3JhbmRhbm5lY3kuZnIvcG9saXRpcXVlLWRlLWNvbmZpZGVudGlhbGl0ZS0xNDA5JyBhbHQ9J1BvbGl0aXF1ZSBkZSBjb25maWRlbnRpYWxpdMOpJ2lkPSduYXYtMjEyJyA+DQpQb2xpdGlxdWUgZGUgY29uZmlkZW50aWFsaXTDqTwvYT48L2xpPiA8L3VsPjwvbGk+PGxpIGNsYXNzPSduYXYtbScgaWQ9J2xpLTIyNic+PGEgaHJlZj0naHR0cHM6Ly9tb2JpbGl0ZXMuZ3JhbmRhbm5lY3kuZnIvc2licmEtYWNjZXNzLTE0MTknIGFsdD0nU2licmEgQWNjZXNzJ2lkPSduYXYtMjI2JyA+DQpTaWJyYSBBY2Nlc3M8L2E+PC9saT48bGkgY2xhc3M9J25hdi1tJyBpZD0nbGktMTg2Jz48YSBocmVmPSdodHRwczovL21vYmlsaXRlcy5ncmFuZGFubmVjeS5mci90cmFuc3BvcnQtc2NvbGFpcmUtZXR1ZGlhbnQtMTM5NicgYWx0PSdUcmFuc3BvcnQgc2NvbGFpcmUnaWQ9J25hdi0xODYnID4NClRyYW5zcG9ydCBzY29sYWlyZTwvYT48L2xpPjxsaSBjbGFzcz0nbmF2LW0nIGlkPSdsaS0yMTQnPjxhIGhyZWY9J2h0dHBzOi8vbW9iaWxpdGVzLmdyYW5kYW5uZWN5LmZyL21vYmlsZXRlLTE0MTMnIGFsdD0nTW9iaWwmIzM5O8OpdMOpJ2lkPSduYXYtMjE0JyA+DQpNb2JpbCfDqXTDqTwvYT48L2xpPjxsaSBjbGFzcz0nbmF2LW0nIGlkPSdsaS0yMTcnPjxhIGhyZWY9J2h0dHBzOi8vbW9iaWxpdGVzLmdyYW5kYW5uZWN5LmZyL21vYmlsaGl2ZXItMTQxNScgYWx0PSdNb2JpbCYjMzk7aGl2ZXInaWQ9J25hdi0yMTcnID4NCk1vYmlsJ2hpdmVyPC9hPjwvbGk+IDwvdWw+PC9saT48bGkgY2xhc3M9J25hdi1tIG5hdi1zdWJtZW51JyBpZD0nbGktMTU2Jz48c3BhbiBpZD0nbGktMTU2Jz5TZSBkw6lwbGFjZXIgYXV0cmVtZW50PC9zcGFuPg0KPHVsIGNsYXNzPScnPjxsaSBjbGFzcz0nbmF2LW0nIGlkPSdsaS0xODMnPjxhIGhyZWY9J2h0dHBzOi8vbW9iaWxpdGVzLmdyYW5kYW5uZWN5LmZyL3BpZWQnIGFsdD0nw4AgcGllZCdpZD0nbmF2LTE4MycgPg0Kw4AgcGllZDwvYT48L2xpPjxsaSBjbGFzcz0nbmF2LW0nIGlkPSdsaS0xODEnPjxhIGhyZWY9J2h0dHBzOi8vbW9iaWxpdGVzLmdyYW5kYW5uZWN5LmZyL3RyYWluJyBhbHQ9J0VuIHRyYWluJ2lkPSduYXYtMTgxJyA+DQpFbiB0cmFpbjwvYT48L2xpPjxsaSBjbGFzcz0nbmF2LW0gbmF2LXN1Ym1lbnUnIGlkPSdsaS0xODAnPjxzcGFuIGlkPSdsaS0xODAnPkVuIHZvaXR1cmU8L3NwYW4+DQo8dWwgY2xhc3M9Jyc+PGxpIGNsYXNzPSduYXYtbScgaWQ9J2xpLTE5Mic+PGEgaHJlZj0naHR0cHM6Ly9tb2JpbGl0ZXMuZ3JhbmRhbm5lY3kuZnIvdm9pdHVyZScgYWx0PSdDb3ZvaXR1cmFnZSAvIEF1dG9zdG9wJ2lkPSduYXYtMTkyJyA+DQpDb3ZvaXR1cmFnZSAvIEF1dG9zdG9wPC9hPjwvbGk+PGxpIGNsYXNzPSduYXYtbScgaWQ9J2xpLTE5Myc+PGEgaHJlZj0naHR0cHM6Ly9tb2JpbGl0ZXMuZ3JhbmRhbm5lY3kuZnIvYXV0b3BhcnRhZ2UtY2l0aXotMTM4MScgYWx0PSdBdXRvcGFydGFnZSdpZD0nbmF2LTE5MycgPg0KQXV0b3BhcnRhZ2U8L2E+PC9saT48bGkgY2xhc3M9J25hdi1tJyBpZD0nbGktMTk0Jz48YSBocmVmPSdodHRwczovL21vYmlsaXRlcy5ncmFuZGFubmVjeS5mci9zdGF0aW9ubmVyLXN1ci1sZS1ncmFuZC1hbm5lY3ktMTM2NScgYWx0PSdTdGF0aW9ubmVtZW50J2lkPSduYXYtMTk0JyA+DQpTdGF0aW9ubmVtZW50PC9hPjwvbGk+IDwvdWw+PC9saT48bGkgY2xhc3M9J25hdi1tJyBpZD0nbGktMTgyJz48YSBocmVmPSdodHRwczovL21vYmlsaXRlcy5ncmFuZGFubmVjeS5mci9iYXRlYXUnIGFsdD0nRW4gYmF0ZWF1J2lkPSduYXYtMTgyJyA+DQpFbiBiYXRlYXU8L2E+PC9saT4gPC91bD48L2xpPjxsaSBjbGFzcz0nbmF2LW0gbmF2LXN1Ym1lbnUnIGlkPSdsaS0xNTgnPjxzcGFuIGlkPSdsaS0xNTgnPkVzcGFjZSBwcm88L3NwYW4+DQo8dWwgY2xhc3M9Jyc+PGxpIGNsYXNzPSduYXYtbScgaWQ9J2xpLTE2NCc+PGEgaHJlZj0naHR0cHM6Ly9tb2JpbGl0ZXMuZ3JhbmRhbm5lY3kuZnIvcGRtZScgYWx0PSdQbGFuIGRlIG1vYmlsaXTDqSBlbXBsb3lldXJzIC0gUERNRSdpZD0nbmF2LTE2NCcgPg0KUGxhbiBkZSBtb2JpbGl0w6kgZW1wbG95ZXVycyAtIFBETUU8L2E+PC9saT48bGkgY2xhc3M9J25hdi1tJyBpZD0nbGktMjA3Jz48YSBocmVmPSdodHRwczovL21vYmlsaXRlcy5ncmFuZGFubmVjeS5mci8tMTQwNScgYWx0PSdMZXMgbW9iaWxpdMOpcyBlbiBlbnRyZXByaXNlJ2lkPSduYXYtMjA3JyA+DQpMZXMgbW9iaWxpdMOpcyBlbiBlbnRyZXByaXNlPC9hPjwvbGk+PGxpIGNsYXNzPSduYXYtbScgaWQ9J2xpLTIwMyc+PGEgaHJlZj0naHR0cHM6Ly9tb2JpbGl0ZXMuZ3JhbmRhbm5lY3kuZnIvY2hhbGxlbmdlLWNvdm9pdHVyYWdlJyBhbHQ9J0NoYWxsZW5nZSBjb3ZvaXR1cmFnZSBlbnRyZXByaXNlJ2lkPSduYXYtMjAzJyA+DQpDaGFsbGVuZ2UgY292b2l0dXJhZ2UgZW50cmVwcmlzZTwvYT48L2xpPiA8L3VsPjwvbGk+PGxpIGNsYXNzPSduYXYtbSBuYXYtc3VibWVudScgaWQ9J2xpLTE2NSc+PHNwYW4gaWQ9J2xpLTE2NSc+U2NvbGFpcmVzPC9zcGFuPg0KPHVsIGNsYXNzPScnPjxsaSBjbGFzcz0nbmF2LW0nIGlkPSdsaS0xNzMnPjxhIGhyZWY9J2h0dHBzOi8vbW9iaWxpdGVzLmdyYW5kYW5uZWN5LmZyL2RlZmktZGVzLWVjb2xpZXJzLTEzODgnIGFsdD0nQ2hhbGxlbmdlIFsgRMOpZmkgZGVzIMOpY29saWVycyBdICdpZD0nbmF2LTE3MycgPg0KQ2hhbGxlbmdlIFsgRMOpZmkgZGVzIMOpY29saWVycyBdIDwvYT48L2xpPjxsaSBjbGFzcz0nbmF2LW0nIGlkPSdsaS0yMTUnPjxhIGhyZWY9J2h0dHBzOi8vbW9iaWxpdGVzLmdyYW5kYW5uZWN5LmZyL3Nhdm9pci1yb3VsZXItYS12ZWxvLTE0MTQnIGFsdD0nU2F2b2lyIHJvdWxlciDDoCB2w6lsbydpZD0nbmF2LTIxNScgPg0KU2F2b2lyIHJvdWxlciDDoCB2w6lsbzwvYT48L2xpPjxsaSBjbGFzcz0nbmF2LW0nIGlkPSdsaS0yMDUnPjxhIGhyZWY9J2h0dHBzOi8vbW9iaWxpdGVzLmdyYW5kYW5uZWN5LmZyL3RyYW5zcG9ydC1zY29sYWlyZS1ldHVkaWFudC0xMzk2JyBhbHQ9J1RyYW5zcG9ydCBzY29sYWlyZSdpZD0nbmF2LTIwNScgPg0KVHJhbnNwb3J0IHNjb2xhaXJlPC9hPjwvbGk+IDwvdWw+PC9saT48bGkgY2xhc3M9J25hdi1tIG5hdi1zdWJtZW51JyBpZD0nbGktMTYxJz48c3BhbiBpZD0nbGktMTYxJz5BY3R1YWxpdMOpcyAmIFByb2pldHMgPC9zcGFuPg0KPHVsIGNsYXNzPScnPjxsaSBjbGFzcz0nbmF2LW0nIGlkPSdsaS0xOTYnPjxhIGhyZWY9J2h0dHBzOi8vbW9iaWxpdGVzLmdyYW5kYW5uZWN5LmZyL2FjdHVhbGl0ZXMnIGFsdD0nQWN0dWFsaXTDqXMnaWQ9J25hdi0xOTYnID4NCkFjdHVhbGl0w6lzPC9hPjwvbGk+PGxpIGNsYXNzPSduYXYtbScgaWQ9J2xpLTIxMyc+PGEgaHJlZj0naHR0cHM6Ly9tb2JpbGl0ZXMuZ3JhbmRhbm5lY3kuZnIvcmVzZWF1aGF1dGVtb2JpbGl0ZS0xNDA2JyBhbHQ9J1LDqXNlYXUgSGF1dGUgTW9iaWxpdMOpJ2lkPSduYXYtMjEzJyA+DQpSw6lzZWF1IEhhdXRlIE1vYmlsaXTDqTwvYT48L2xpPiA8L3VsPjwvbGk+PGxpIGNsYXNzPSduYXYtbSBuYXYtc3VibWVudScgaWQ9J2xpLTE1Nyc+PHNwYW4gaWQ9J2xpLTE1Nyc+RMOpY291dnJpciBsZSB0ZXJyaXRvaXJlPC9zcGFuPg0KPHVsIGNsYXNzPScnPjxsaSBjbGFzcz0nbmF2LW0nIGlkPSdsaS0xNzQnPjxhIGhyZWY9J2h0dHBzOi8vbW9iaWxpdGVzLmdyYW5kYW5uZWN5LmZyL3ZpbGxlJyBhbHQ9J0plIG1lIGTDqXBsYWNlIGRhbnMgbCYjMzk7YWdnbG9tw6lyYXRpb24naWQ9J25hdi0xNzQnID4NCkplIG1lIGTDqXBsYWNlIGRhbnMgbCdhZ2dsb23DqXJhdGlvbjwvYT48L2xpPjxsaSBjbGFzcz0nbmF2LW0nIGlkPSdsaS0xNzUnPjxhIGhyZWY9J2h0dHBzOi8vbW9iaWxpdGVzLmdyYW5kYW5uZWN5LmZyL2xhYycgYWx0PSdKZSBib3VnZSBhdXRvdXIgZHUgbGFjJ2lkPSduYXYtMTc1JyA+DQpKZSBib3VnZSBhdXRvdXIgZHUgbGFjPC9hPjwvbGk+PGxpIGNsYXNzPSduYXYtbScgaWQ9J2xpLTE3Nyc+PGEgaHJlZj0naHR0cHM6Ly9tb2JpbGl0ZXMuZ3JhbmRhbm5lY3kuZnIvcmVnaW9uJyBhbHQ9J0omIzM5O2V4cGxvcmUgbGEgcsOpZ2lvbidpZD0nbmF2LTE3NycgPg0KSidleHBsb3JlIGxhIHLDqWdpb248L2E+PC9saT48bGkgY2xhc3M9J25hdi1tJyBpZD0nbGktMjE2Jz48YSBocmVmPSdodHRwczovL21vYmlsaXRlcy5ncmFuZGFubmVjeS5mci9tb250YWduZScgYWx0PSdKZSBwcmVuZHMgbCYjMzk7YWlyIMOgIGxhIG1vbnRhZ25lJ2lkPSduYXYtMjE2JyA+DQpKZSBwcmVuZHMgbCdhaXIgw6AgbGEgbW9udGFnbmU8L2E+PC9saT4gPC91bD48L2xpPjxsaSBjbGFzcz0nbmF2LW0gbmF2LXN1Ym1lbnUnIGlkPSdsaS0xNTknPjxzcGFuIGlkPSdsaS0xNTknPlRhcmlmczwvc3Bhbj4NCjx1bCBjbGFzcz0nJz48bGkgY2xhc3M9J25hdi1tJyBpZD0nbGktMTYyJz48YSBocmVmPSdodHRwczovL21vYmlsaXRlcy5ncmFuZGFubmVjeS5mci90YXJpZnMtMTM4NScgYWx0PSdUaXRyZXMgJmFtcDsgdGFyaWZzIFNJQlJBJ2lkPSduYXYtMTYyJyA+DQpUaXRyZXMgJiB0YXJpZnMgU0lCUkE8L2E+PC9saT4gPC91bD48L2xpPmQCAw8PFgIfAQUmaHR0cHM6Ly9tb2JpbGl0ZXMuZ3JhbmRhbm5lY3kuZnIvY2FydGVkZAIED2QWAmYPDxYCHg1BbHRlcm5hdGVUZXh0BSFBY2N1ZWlsIEVjb21vYmlsaXTDqSBHcmFuZCBBbm5lY3lkZAIFD2QWAgIBDxYCHwBoZAIHD2QWAmYPDxYEHghDc3NDbGFzcwUpZGVjb25uZXhpb25DdCBkZWNvbm5leGlvbkN0LS1kaXNjb25uZWN0ZWQeBF8hU0ICAmQWBAIBDw8WAh8BBS9odHRwczovL21vYmlsaXRlcy5ncmFuZGFubmVjeS5mci9jb21wdGUvYWNjdWVpbGRkAgMPZBYCZg9kFgICAQ9kFgICAQ88KwAKAGQCCw9kFgQCAQ8PFgIfAQUsaHR0cHM6Ly9tb2JpbGl0ZXMuZ3JhbmRhbm5lY3kuZnIvdGFyaWZzLTEzODVkZAIDDw8WAh8BBSZodHRwczovL21vYmlsaXRlcy5ncmFuZGFubmVjeS5mci9jYXJ0ZWRkAg0PZBYCAgEPZBYCZg8WAh8EBdMBPGEgaHJlZj0naHR0cHM6Ly9tb2JpbGl0ZXMuZ3JhbmRhbm5lY3kuZnInIHRpdGxlPSdBY2N1ZWlsJyA+QWNjdWVpbDwvYT48c3BhbiBjbGFzcz0nc2VwQ2hlbWluTmF2Jz48L3NwYW4+PHNwYW4+RW4gYnVzPC9zcGFuPjxzcGFuIGNsYXNzPSdzZXBDaGVtaW5OYXYnPjwvc3Bhbj48c3Bhbj5DYWxjdWwgZCdpdGluw6lyYWlyZXMgZXQgZmljaGVzIGhvcmFpcmVzPC9zcGFuPmQCDg8PFgQfBgUIZnVsbHBhZ2UfBwICZBYGAgEPDxYCHwBoZGQCAw8PFgQfBgUPY29udGVudUZ1bGxQYWdlHwcCAmQWBAIBD2QWBAIBD2QWAmYPFgIeC18hSXRlbUNvdW50AgQWCGYPZBYCAgEPDxYEHwYFQmNvbnRlbmV1ckNvbnRlbnVCbG9jIGNjYjE3NjQgbWFyZ2luQm90dG9tMzAgbWFyZ2luVG9wMTAwIGRpdkNlbnRlch8HAgJkFgYCAQ8WAh8EBSo8ZGl2IGNsYXNzPSdjdExhcmdlJz48ZGl2IGNsYXNzPSdjb250ZW50Jz5kAgUPDxYGHwYFC2NvbnRlbnVGdWxsHwcCAh8AZ2RkAg0PFgIfBAUMPC9kaXY+PC9kaXY+ZAIBD2QWAgIBDw8WBB8GBRtjb250ZW5ldXJDb250ZW51QmxvYyBjY2I4MzcfBwICZBYGAgEPFgIfBAUqPGRpdiBjbGFzcz0nY3RMYXJnZSc+PGRpdiBjbGFzcz0nY29udGVudCc+ZAIFDw8WBh8GBQtjb250ZW51RnVsbB8HAgIfAGdkZAINDxYCHwQFDDwvZGl2PjwvZGl2PmQCAg9kFgICAQ8PFgQfBgVKY29udGVuZXVyQ29udGVudUJsb2MgY2NiMTc2MSB0ZXh0ZURvdWJsZSBibG9jLWJsYW5jIGRpdkNlbnRlciBtYXJnaW5Ub3AxMDAfBwICZBYKAgEPFgIfBAUqPGRpdiBjbGFzcz0nY3RMYXJnZSc+PGRpdiBjbGFzcz0nY29udGVudCc+ZAIDDw8WBh8GBRRjb250ZW51VGV4dGUyQ29sSGF1dB8HAgIfAGdkZAIFDw8WBh8GBRFjb250ZW51VGV4dGUyQ29sRx8HAgIfAGdkZAIHDw8WBh8GBRFjb250ZW51VGV4dGUyQ29sRB8HAgIfAGdkZAINDxYCHwQFDDwvZGl2PjwvZGl2PmQCAw9kFgICAQ8PFgQfBgVMY29udGVuZXVyQ29udGVudUJsb2MgY2NiMTc2MiB0ZXh0ZURvdWJsZSBibG9jLWJsYW5jIGRpdkNlbnRlciBtYXJnaW5Cb3R0b20zMB8HAgJkFgoCAQ8WAh8EBSo8ZGl2IGNsYXNzPSdjdExhcmdlJz48ZGl2IGNsYXNzPSdjb250ZW50Jz5kAgMPDxYGHwYFFGNvbnRlbnVUZXh0ZTJDb2xIYXV0HwcCAh8AZ2RkAgUPDxYGHwYFEWNvbnRlbnVUZXh0ZTJDb2xHHwcCAh8AZ2RkAgcPDxYGHwYFEWNvbnRlbnVUZXh0ZTJDb2xEHwcCAh8AZ2RkAg0PFgIfBAUMPC9kaXY+PC9kaXY+ZAIDD2QWAmYPDxYCHwBoZGQCAw9kFgRmDw8WBB8GBRljdCB0eHRUaXRyZVBhZ2VTdXBwbGVtZW50HwcCAmRkAgIPDxYEHwYFFGN0IHR4dFBhZ2VTdXBwbGVtZW50HwcCAmRkAgUPDxYCHwBoZGQYAwUuY3RsMDAkY3BoUGFuTWlsaWV1JExpc3RlUHJvZHVpdHMkUHJvZHVpdHNQYWdlcg8UKwAEZGQCFGZkBTFjdGwwMCRjcGhQYW5NaWxpZXUkTGlzdGVQcm9kdWl0cyRQcm9kdWl0c0xpc3RWaWV3DzwrAA4CDGYNAhRkBR9jdGwwMCR1Y0Nvbm5leGlvbkhvdmVyJGZybUxvZ2luDzwrAAcBAgIBZF7BfmJt0tn5SNvAoAyXmCpx7UxeMMNnoEstRDKgbJVE" />
+</div>
+
+<style>.blocIntroMaster .contenuMixteTexteG, .blocIntroMaster .contenuMixteTexteD {  visibility:hidden   }@media only screen and (min-width: 960px){  .photoColonne {  visibility:hidden   }}@media only screen and (min-width: 960px){ .contenuMixteTexteG, .contenuMixteTexteD, .contenuFull, .contenuTexte2ColD, .contenuTexte2ColG {  visibility:hidden   }}</style>
+<script type="text/javascript">
+//<![CDATA[
+document.getElementById("gsap").addEventListener("load", () => {gsap.registerPlugin(ScrollTrigger,SplitText);window.boonet.animations = {};window.boonet.animations.funcAnimationH1_15 = function(){  try {document.querySelectorAll('.blocIntroMaster .contenuMixteTexteG, .blocIntroMaster .contenuMixteTexteD')?.forEach(element => {  const tl = gsap.timeline({scrollTrigger: {trigger: element,markers: false,start: 'top +=65%',end: 'center +=65%',once: true,pin: false,refreshPriority:  1,}});tl.from(element,{duration:0.7,autoAlpha:0,delay:0,});});}catch (err){console.error(`Erreur Animation H1, Module Animation : ${err}`)};}; window.boonet.afterAnyPageLoad(_=>{ window.boonet.animations.funcAnimationH1_15() });window.boonet.animations.funcAnimationimgs_17 = function(){  try {if (!window.matchMedia('(max-width: 960px)').matches) {  document.querySelectorAll(' .photoColonne')?.forEach(element => {  const tl = gsap.timeline({scrollTrigger: {trigger: element,markers: false,start: 'top +=65%',end: 'center +=65%',once: true,pin: false,refreshPriority:  1,}});tl.fromTo(element,{autoAlpha:0,},{autoAlpha:1,ease:'power2.out',duration:2,});});};}catch (err){console.error(`Erreur Animation imgs, Module Animation : ${err}`)};}; window.boonet.afterAnyPageLoad(_=>{ window.boonet.animations.funcAnimationimgs_17() });window.boonet.animations.funcBlocdetexte_19 = function(){  try {if (!window.matchMedia('(max-width: 960px)').matches) {  document.querySelectorAll('.contenuMixteTexteG, .contenuMixteTexteD, .contenuFull, .contenuTexte2ColD, .contenuTexte2ColG')?.forEach(element => {  const tl = gsap.timeline({scrollTrigger: {trigger: element,markers: false,start: 'top +=65%',end: 'center +=65%',once: true,pin: false,refreshPriority:  1,}});tl.fromTo(element,{autoAlpha:0,y:'50px',},{autoAlpha:1,ease:'power2.out',duration:2,y:'0px',});});};}catch (err){console.error(`Erreur Bloc de texte, Module Animation : ${err}`)};}; window.boonet.afterAnyPageLoad(_=>{ window.boonet.animations.funcBlocdetexte_19() });window.boonet.animations.refreshAll = function(){  Object.keys(window.boonet.animations)?.forEach(animName => {  if(!animName.includes('func')){ return; }; window.boonet.animations[animName]()  });  } ;});var __cultureInfo = {"name":"fr-FR","numberFormat":{"CurrencyDecimalDigits":2,"CurrencyDecimalSeparator":",","IsReadOnly":true,"CurrencyGroupSizes":[3],"NumberGroupSizes":[3],"PercentGroupSizes":[3],"CurrencyGroupSeparator":" ","CurrencySymbol":"€","NaNSymbol":"NaN","CurrencyNegativePattern":8,"NumberNegativePattern":1,"PercentPositivePattern":0,"PercentNegativePattern":0,"NegativeInfinitySymbol":"-∞","NegativeSign":"-","NumberDecimalDigits":2,"NumberDecimalSeparator":",","NumberGroupSeparator":" ","CurrencyPositivePattern":3,"PositiveInfinitySymbol":"∞","PositiveSign":"+","PercentDecimalDigits":2,"PercentDecimalSeparator":",","PercentGroupSeparator":" ","PercentSymbol":"%","PerMilleSymbol":"‰","NativeDigits":["0","1","2","3","4","5","6","7","8","9"],"DigitSubstitution":1},"dateTimeFormat":{"AMDesignator":"","Calendar":{"MinSupportedDateTime":"\/Date(-62135596800000)\/","MaxSupportedDateTime":"\/Date(253402297199999)\/","AlgorithmType":1,"CalendarType":1,"Eras":[1],"TwoDigitYearMax":2049,"IsReadOnly":true},"DateSeparator":"/","FirstDayOfWeek":1,"CalendarWeekRule":2,"FullDateTimePattern":"dddd d MMMM yyyy HH:mm:ss","LongDatePattern":"dddd d MMMM yyyy","LongTimePattern":"HH:mm:ss","MonthDayPattern":"d MMMM","PMDesignator":"","RFC1123Pattern":"ddd, dd MMM yyyy HH\u0027:\u0027mm\u0027:\u0027ss \u0027GMT\u0027","ShortDatePattern":"dd/MM/yyyy","ShortTimePattern":"HH:mm","SortableDateTimePattern":"yyyy\u0027-\u0027MM\u0027-\u0027dd\u0027T\u0027HH\u0027:\u0027mm\u0027:\u0027ss","TimeSeparator":":","UniversalSortableDateTimePattern":"yyyy\u0027-\u0027MM\u0027-\u0027dd HH\u0027:\u0027mm\u0027:\u0027ss\u0027Z\u0027","YearMonthPattern":"MMMM yyyy","AbbreviatedDayNames":["dim.","lun.","mar.","mer.","jeu.","ven.","sam."],"ShortestDayNames":["di","lu","ma","me","je","ve","sa"],"DayNames":["dimanche","lundi","mardi","mercredi","jeudi","vendredi","samedi"],"AbbreviatedMonthNames":["janv.","févr.","mars","avr.","mai","juin","juil.","août","sept.","oct.","nov.","déc.",""],"MonthNames":["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre",""],"IsReadOnly":true,"NativeCalendarName":"calendrier grégorien","AbbreviatedMonthGenitiveNames":["janv.","févr.","mars","avr.","mai","juin","juil.","août","sept.","oct.","nov.","déc.",""],"MonthGenitiveNames":["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre",""]},"eras":[1,"ap. J.-C.",null,0]};//]]>
+</script>
+
+<script src="/ScriptResource.axd?d=ICnpPcw-vN-1MFdI40et3vgkJJpvlKmeqBunIydi2NXD1fjV6nlNIR_aw988gfemP36IDjnR6XPHKtrLYqIlvXQxwcrYHM-7-I8LJRV-gqnyqToqPn6CjRvdQiZOpByljIswUblWFaxcQfvY0YT3Mf_8o4sG9CUEK7Hx56vWynsMoY1xeD_uHFGtigxl_Qs1elhSTycUL2xWYvROoGmqGDk4WI9STDnbWtviVDGeeWugl0pNK6M__GwFK-dO427agmz9VfYvjEE3xZZcxNN6hUXs9tPdWDrY6u40Q_uTvu7O5jE53gGMli-GU0_wh3yP3dAKKTM9PfTFsK3U7l06Jd5Lg3wOcMqAbhaSxfj1x2znI_VoWvIAc4Js2lgeU2g6axVxRVNUcErAMCEjMI5Vn1WP-fT2jrrfqEVI5NNZBhDNjEfCLP5WcVh5gLM-AFDxwUwAkW2MP8s2M0zqTbt8yOI1Spk1oxlaxMPLmUYPkazAcOuvu2sStNhQLg69gzDfX2yYFjiYfOBleRvS0--OrG27gvsRXFQz-wKm3KpCk66qqQYf3DwuyfvYIhbOxBrjm_NdzuFsH2yIqO3CWeEO3XwEKeig3E-5cvKliYGKzqnw6tywlKtRTdEWttviTPy90" type="text/javascript"></script>
+        
+        
+        
+        <div id="upLoader" style="display:none;">
+	
+                <div class="loading">
+
+                    <div class="spinner">
+                        <div class="bounce1"></div>
+                        <div class="bounce2"></div>
+                        <div class="bounce3"></div>
+                    </div>
+                </div>
+            
+</div>
+
+        
+<div id="panPageNonVisible">
+	
+    
+
+</div>
+
+
+        <div class="Messages">
+
+</div>
+
+        <div id="ctl00_panFondGeneral" class="divFondGeneral">
+	
+            
+
+            
+
+
+            <a href="https://mobilites.grandannecy.fr" title='Accueil Ecomobilité Grand Annecy' class="aAnnecy">
+                
+
+
+<div class="logoAnnecy">
+</div>
+
+            </a>
+
+            
+
+
+            <header class="header header-master">
+                
+
+<div class="menuMobLogo">
+    <a id="ctl00_ucMenuPrincipal1_lkHome" title="Accueil Ecomobilité Grand Annecy" href="https://mobilites.grandannecy.fr"><img src="assets/images/logo.svg" /></a>
+</div>
+
+<div id="burger" class="navBurgerBtn">
+    <span></span>
+    <span></span>
+    MENU
+    
+</div>
+
+<div id="ctl00_ucMenuPrincipal1_udpNav" class="nav navBurger">
+		
+        <div class="menu-content">
+            <ul>
+                <li class='nav-m nav-submenu' id='li-179'><span id='li-179'>À vélo</span>
+<ul class=''><li class='nav-m' id='li-219'><a href='https://mobilites.grandannecy.fr/velo' alt='L&#39;Agglo à vélo'id='nav-219' >
+L'Agglo à vélo</a></li><li class='nav-m' id='li-218'><a href='https://mobilites.grandannecy.fr/velonecy-60-minutes-1416' alt='Vélonecy 60 minutes'id='nav-218' >
+Vélonecy 60 minutes</a></li><li class='nav-m' id='li-198'><a href='https://mobilites.grandannecy.fr/location-longue-duree-velonecy-1417' alt='Vélonecy, Location longue durée'id='nav-198' >
+Vélonecy, Location longue durée</a></li><li class='nav-m' id='li-188'><a href='https://mobilites.grandannecy.fr/reserver-une-place-de-consigne-velonecy-box-1384' alt='Vélonecy Box, pour stationner votre vélo'id='nav-188' >
+Vélonecy Box, pour stationner votre vélo</a></li><li class='nav-m' id='li-191'><a href='https://mobilites.grandannecy.fr/cycliste-pratique-1383' alt='Cycliste Pratique'id='nav-191' >
+Cycliste Pratique</a></li><li class='nav-m' id='li-220'><a href='https://mobilites.grandannecy.fr/schema-cyclable' alt='Réseau cyclable'id='nav-220' >
+Réseau cyclable</a></li><li class='nav-m' id='li-224'><span id='li-224'>Aires de services</span>
+</li> </ul></li><li class='nav-m nav-submenu' id='li-178'><span id='li-178'>En bus</span>
+<ul class=''><li class='nav-m menuEnCours' id='li-185'><a href='https://mobilites.grandannecy.fr/carte' alt='Calcul d&#39;itinéraires et fiches horaires'id='nav-185' >
+Calcul d'itinéraires et fiches horaires</a></li><li class='nav-m' id='li-184'><a href='https://mobilites.grandannecy.fr/bus' alt='Toutes les lignes du réseau'id='nav-184' >
+Toutes les lignes du réseau</a></li><li class='nav-m nav-submenu' id='li-209'><a href='https://mobilites.grandannecy.fr/sibra-a-la-demande-1408' alt='Sibra à la demande'id='nav-209' >
+Sibra à la demande</a><ul class=''><li class='nav-m' id='li-212'><a href='https://mobilites.grandannecy.fr/politique-de-confidentialite-1409' alt='Politique de confidentialité'id='nav-212' >
+Politique de confidentialité</a></li> </ul></li><li class='nav-m' id='li-226'><a href='https://mobilites.grandannecy.fr/sibra-access-1419' alt='Sibra Access'id='nav-226' >
+Sibra Access</a></li><li class='nav-m' id='li-186'><a href='https://mobilites.grandannecy.fr/transport-scolaire-etudiant-1396' alt='Transport scolaire'id='nav-186' >
+Transport scolaire</a></li><li class='nav-m' id='li-214'><a href='https://mobilites.grandannecy.fr/mobilete-1413' alt='Mobil&#39;été'id='nav-214' >
+Mobil'été</a></li><li class='nav-m' id='li-217'><a href='https://mobilites.grandannecy.fr/mobilhiver-1415' alt='Mobil&#39;hiver'id='nav-217' >
+Mobil'hiver</a></li> </ul></li><li class='nav-m nav-submenu' id='li-156'><span id='li-156'>Se déplacer autrement</span>
+<ul class=''><li class='nav-m' id='li-183'><a href='https://mobilites.grandannecy.fr/pied' alt='À pied'id='nav-183' >
+À pied</a></li><li class='nav-m' id='li-181'><a href='https://mobilites.grandannecy.fr/train' alt='En train'id='nav-181' >
+En train</a></li><li class='nav-m nav-submenu' id='li-180'><span id='li-180'>En voiture</span>
+<ul class=''><li class='nav-m' id='li-192'><a href='https://mobilites.grandannecy.fr/voiture' alt='Covoiturage / Autostop'id='nav-192' >
+Covoiturage / Autostop</a></li><li class='nav-m' id='li-193'><a href='https://mobilites.grandannecy.fr/autopartage-citiz-1381' alt='Autopartage'id='nav-193' >
+Autopartage</a></li><li class='nav-m' id='li-194'><a href='https://mobilites.grandannecy.fr/stationner-sur-le-grand-annecy-1365' alt='Stationnement'id='nav-194' >
+Stationnement</a></li> </ul></li><li class='nav-m' id='li-182'><a href='https://mobilites.grandannecy.fr/bateau' alt='En bateau'id='nav-182' >
+En bateau</a></li> </ul></li><li class='nav-m nav-submenu' id='li-158'><span id='li-158'>Espace pro</span>
+<ul class=''><li class='nav-m' id='li-164'><a href='https://mobilites.grandannecy.fr/pdme' alt='Plan de mobilité employeurs - PDME'id='nav-164' >
+Plan de mobilité employeurs - PDME</a></li><li class='nav-m' id='li-207'><a href='https://mobilites.grandannecy.fr/-1405' alt='Les mobilités en entreprise'id='nav-207' >
+Les mobilités en entreprise</a></li><li class='nav-m' id='li-203'><a href='https://mobilites.grandannecy.fr/challenge-covoiturage' alt='Challenge covoiturage entreprise'id='nav-203' >
+Challenge covoiturage entreprise</a></li> </ul></li><li class='nav-m nav-submenu' id='li-165'><span id='li-165'>Scolaires</span>
+<ul class=''><li class='nav-m' id='li-173'><a href='https://mobilites.grandannecy.fr/defi-des-ecoliers-1388' alt='Challenge [ Défi des écoliers ] 'id='nav-173' >
+Challenge [ Défi des écoliers ] </a></li><li class='nav-m' id='li-215'><a href='https://mobilites.grandannecy.fr/savoir-rouler-a-velo-1414' alt='Savoir rouler à vélo'id='nav-215' >
+Savoir rouler à vélo</a></li><li class='nav-m' id='li-205'><a href='https://mobilites.grandannecy.fr/transport-scolaire-etudiant-1396' alt='Transport scolaire'id='nav-205' >
+Transport scolaire</a></li> </ul></li><li class='nav-m nav-submenu' id='li-161'><span id='li-161'>Actualités & Projets </span>
+<ul class=''><li class='nav-m' id='li-196'><a href='https://mobilites.grandannecy.fr/actualites' alt='Actualités'id='nav-196' >
+Actualités</a></li><li class='nav-m' id='li-213'><a href='https://mobilites.grandannecy.fr/reseauhautemobilite-1406' alt='Réseau Haute Mobilité'id='nav-213' >
+Réseau Haute Mobilité</a></li> </ul></li><li class='nav-m nav-submenu' id='li-157'><span id='li-157'>Découvrir le territoire</span>
+<ul class=''><li class='nav-m' id='li-174'><a href='https://mobilites.grandannecy.fr/ville' alt='Je me déplace dans l&#39;agglomération'id='nav-174' >
+Je me déplace dans l'agglomération</a></li><li class='nav-m' id='li-175'><a href='https://mobilites.grandannecy.fr/lac' alt='Je bouge autour du lac'id='nav-175' >
+Je bouge autour du lac</a></li><li class='nav-m' id='li-177'><a href='https://mobilites.grandannecy.fr/region' alt='J&#39;explore la région'id='nav-177' >
+J'explore la région</a></li><li class='nav-m' id='li-216'><a href='https://mobilites.grandannecy.fr/montagne' alt='Je prends l&#39;air à la montagne'id='nav-216' >
+Je prends l'air à la montagne</a></li> </ul></li><li class='nav-m nav-submenu' id='li-159'><span id='li-159'>Tarifs</span>
+<ul class=''><li class='nav-m' id='li-162'><a href='https://mobilites.grandannecy.fr/tarifs-1385' alt='Titres &amp; tarifs SIBRA'id='nav-162' >
+Titres & tarifs SIBRA</a></li> </ul></li>
+            </ul>
+
+        </div>
+        <a id="ctl00_ucMenuPrincipal1_lkCarte" class="map-interactive" href="https://mobilites.grandannecy.fr/carte">
+
+            <div class="btn btn-bleu">
+                Carte interactive
+            </div>
+            <div class="map-interactive-bg"></div>
+        </a>
+    
+	</div>
+<style>
+    .nav-submenu {
+        touch-action: none;
+    }
+
+        .nav-submenu ul.open {
+            display: block !important;
+        }
+</style>
+<script>
+    const mediaQueryMobile = '(max-width: 1151px)';
+    const mediaQueryDektop = '(min-width: 900px)';
+    const mediaQueryListMobile = window.matchMedia(mediaQueryMobile);
+    const mediaQueryListDektop = window.matchMedia(mediaQueryDektop);
+    // gestion du menu (Mobile, Desktop)
+    function Menu() {
+        let burg = document.getElementById("burger");
+        let nav = document.querySelector(".nav");
+
+        if (mediaQueryListMobile.matches || true) {
+            burg.classList.remove("hide-burger");
+            nav.classList.add("navBurger");
+        }
+        else {
+            burg.classList.add("hide-burger");
+            nav.classList.remove("navBurger");
+        }
+        let actif = document.querySelector(".menuEnCours");
+        // si c'est un enfant
+        if (actif != null && !actif?.classList?.contains("nav-submenu")) {
+            // recherche du parent
+            document.querySelector(".menuEnCours")?.closest(".nav-submenu")?.classList.add("menuEnCours");
+        }
+        else {
+            let el = document.querySelector(`.nav-m a[href='${document.location.href}']`)?.closest(".nav-submenu");
+            if (el != null) {
+                el.classList.add("menuEnCours");
+            }
+        }
+        let navs;
+        if (mediaQueryListMobile.matches) {
+            navs = document.querySelectorAll(".nav-submenu span");
+
+            for (const nav of navs) {
+                nav.onpointerenter = (e) => {                    let el = e.currentTarget?.nextElementSibling;
+                    if (el != null && el.classList.contains('open')) {
+                        el.classList.remove('open');
+                        nav.parentElement.classList.remove('actifSousMenu');
+                    }
+                    else if (el != null) {
+                        el.classList.add('open');
+                        nav.parentElement.classList.add('actifSousMenu');
+                        let openEls = document.querySelectorAll(".open");
+                        for (var i of openEls) {
+                            // condition si c'est un parent
+                            if (i != el && !el.previousElementSibling?.parentElement?.parentElement?.classList.contains('open')) {
+                                i.classList.remove('open');
+                            }
+                        }
+                    }
+                    e.stopPropagation();
+                };
+            }
+        }
+        else if (true) {            
+        	navs = document.querySelectorAll(".nav-submenu span");
+            for (const nav of navs) {
+                nav.onclick = (e) => {
+                    let el = e.currentTarget?.nextElementSibling;
+                    if (el != null && el.classList.contains('open')) {
+                        el.classList.remove('open');
+                        nav.parentElement.classList.remove('actifSousMenu');
+                    }
+                    else if (el != null) {
+                        el.classList.add('open');
+                        nav.parentElement.classList.add('actifSousMenu');
+                        let openEls = document.querySelectorAll(".open");
+                        for (var i of openEls) {
+                            // condition si c'est un parent
+                            if (i != el && !el.previousElementSibling?.parentElement?.parentElement?.classList.contains('open')) {
+                                i.classList.remove('open');
+                            }
+                        }
+                    }
+                    e.stopPropagation();
+                };
+            }
+        }
+        else {
+            navs = document.querySelectorAll(".nav-submenu");
+            for (const nav of navs) {
+                nav.onmouseenter = (e) => {
+                    let el = e.currentTarget.querySelector("ul") ?? e.currentTarget;
+                    el.classList.add('open');
+                    e.stopPropagation();
+                };
+                nav.onmouseleave = (e) => {
+                    let el = e.currentTarget.querySelector("ul") ?? e.currentTarget;
+                    el.classList.remove('open');
+                    e.stopPropagation();
+                };
+            }
+        }
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+        //onMediaQueryChange();
+        Menu();
+        boonet.afterAsyncPostBack(function (e) {
+            Menu();
+        });
+        document.getElementById("burger").addEventListener("click", () => {
+            document.querySelector("body").classList.toggle("hasNavOpen");
+            document.querySelector(".overlayMenu").classList.toggle("openOverlay");
+            // fermeture
+            document.querySelector(".openOverlay").addEventListener("click", () => {
+                document.querySelector("body").classList.remove("hasNavOpen");
+                document.querySelector(".overlayMenu").classList.remove("openOverlay");
+            });
+        });
+    });
+    mediaQueryListMobile.onchange = (e) => {
+       // onMediaQueryChange();
+    }
+    mediaQueryListDektop.onchange = (e) => {
+       // onMediaQueryChange();
+    }
+    // rafraichissemement si mobile ou desktop
+    function onMediaQueryChange() {
+        //__doPostBack("ctl00$ucMenuPrincipal1$udpNav", mediaQueryListMobile.matches ? true : false);
+    }
+</script>
+
+                <div class="overlayMenu"></div>
+                <div id="logo">
+                    <a href="https://mobilites.grandannecy.fr" title='Accueil Ecomobilité Grand Annecy'>
+                        <img id="ctl00_ucLogo1_imgLogo" src="assets/images/logo.svg" alt="Accueil Ecomobilité Grand Annecy" />
+
+                    </a>
+                </div>
+
+                <div id="outils" class="none">
+                    
+
+<div id="languesCt">
+    <div class="langueDrop">
+        fr
+        
+        <span class="ico-fleche010"></span>
+    </div>
+    <div class="langues">
+        
+    </div>
+</div>
+
+
+
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", () => {
+        var etatlangueMob = "close";
+        $(".langueDrop").click(function () {
+            if (etatlangueMob == "close") {
+                $('.langues').addClass('open');
+                etatlangueMob = "open";
+            } else {
+                $('.langues').removeClass('open');
+                etatlangueMob = "close";
+            }
+        });
+    });
+</script>
+
+                    ﻿<div id="panRecherche" class="divRecherche">
+		
+    <div class="searchChamps">
+        <div id="recherche-haut" class="recherche-haut">
+            <input name="ctl00$ucRechercheHaut1$txtRecherche" type="text" maxlength="2048" id="ctl00_ucRechercheHaut1_txtRecherche" class="classTxtRecherche" autocapitalize="off" placeholder="Départ (arrêt, adresse, lieu...)" aria-label="Départ (arrêt, adresse, lieu...)" data-lpignore="true" autocorrect="off" aria-controls="autoComplete" dir="ltr" spellcheck="false" autocomplete="off" />
+            <div class="selection"></div>
+            
+        </div>
+        
+    </div>
+
+	</div>
+
+<script>
+
+    $(document).ready(function () {
+
+
+        const autoCompleteJStart = new autoComplete({
+            selector: "#ctl00_ucRechercheHaut1_txtRecherche",
+            data: {
+                src: async (query) => {
+                    try {
+                        // Fetch Data from external Source
+                        const source = await fetch(`https://mobilites.grandannecy.fr/api/pagerecherche/${query}`);
+                        // Data should be an array of `Objects` or `Strings`
+                        const data = await source.json();
+
+                        return data;
+                    } catch (error) {
+                        return error; 
+                    }
+                },
+                keys: ["txtImput"],
+                //filter: (list) => {
+                //     //Filter duplicates
+                //     //incase of multiple data keys usage
+                //    const filteredResults = Array.from(new Set(list.map((value) => value.match))).map((food) => {
+                //        return list.find((value) => value.match === food);
+                //    });
+
+                //    return list;
+                //},
+
+            },
+            placeHolder: "Que recherchez-vous ?",
+            debounce: 800,
+            searchEngine: "loose",
+            diacritics: true,
+            resultsList: {
+                element: (list, data) => {
+                    const info = document.createElement("p");
+                    if (data.results.length) {
+                        //info.innerHTML = `Displaying <strong>${data.results.length}</strong> out of <strong>${data.matches.length}</strong> results`;
+                    } else {
+                        info.style = "display: flex; justify-content: space-between;";
+                        info.innerHTML = `
+                        <span style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
+                        Aucun résultat
+                        </span>`;
+                        //info.innerHTML = `Found <strong>${data.matches.length}</strong> matching results for <strong>"${data.query}"</strong>`;
+                        /*   storeIdAddress('IsStartItineraire', '');*/
+                    }
+                    list.prepend(info);
+                },
+                noResults: true,
+                maxResults: 20,
+                tabSelect: true,
+            },
+            resultItem: {
+                element: (item, data) => {
+                    // Modify Results Item Style
+                    item.style = "display: flex; justify-content: space-between;";
+                    item.innerHTML = `
+                                    <span data-id=${data.value.Url} style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
+                                    ${data.value.Titre}
+                                    </span>`;
+
+                },
+                highlight: true,
+            },
+            events: {
+                input: {
+                    focus() {
+                    },
+                    selection(event) {
+                        const feedback = event.detail;
+                        autoCompleteJStart.input.blur();
+
+                        const selection = feedback.selection.value[feedback.selection.key];
+                        const idAd = feedback.selection.value.Url;
+
+                        autoCompleteJStart.input.value = feedback.selection.value.Titre;
+
+                        //Quand on clique on ouvre la page correspondante
+                        window.location.href = idAd;
+                    },
+                },
+            }
+        }, 'autoCompleteJStart');
+    })
+
+
+</script>
+
+                    
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        boonet.afterAnyPageLoad(function (sender) {
+            login();
+        });
+    });
+    function login() {
+        const connexionHoverPanier = document.querySelector(".hover-panier");
+
+        // position  du haut suivant la hauteur du header
+        const headerHeight = document.querySelector("header").offsetHeight;
+        //connexionHoverPanier.style.top = '${document.querySelector(".header").offsetHeight}px';
+        //alert(connexionHoverPanier.style.top);
+
+        const smallCartHeight = document.querySelector(".connexionHover")?.offsetHeight;
+        const icoCompte = document.querySelector(".iconCompteMob");
+        let isOpen = false;
+
+        function toggle(open) {
+            if (open) {
+                gsap.to(connexionHoverPanier, 0.35, {
+                    height: smallCartHeight,
+                    ease: Sine.easeOut,
+                    top: headerHeight,
+                });
+                isOpen = true;
+            }
+            else {
+                if (document.activeElement && connexionHoverPanier.contains(document.activeElement)) {
+                    return;
+                }
+
+                gsap.to(connexionHoverPanier, 0.35, {
+                    height: 0,
+                    ease: Sine.easeOut,
+                    top: headerHeight,
+                });
+                isOpen = false;
+
+            }
+        }
+
+        $(".iconCompteMob").hover(
+            function () {
+                hovertimer = setTimeout(function () {
+                    toggle(true);
+                }, 0)
+            },
+            function () {
+                clearTimeout(hovertimer);
+                //toggle(false);
+            }
+        );
+        if (connexionHoverPanier !== null)
+            connexionHoverPanier.addEventListener("mouseleave", function (event) {
+                toggle(false);
+            });
+        if (icoCompte !== null)
+            icoCompte.addEventListener("click", function () {
+                toggle(!isOpen);
+            });
+    }
+</script>
+
+                    <div class="toggleSmallCart">
+                        
+                        
+                    </div>
+
+                </div>
+                <div class="habillage-master">
+                    <img src="assets/images/habillage-master.svg" />
+                </div>
+            </header>
+
+
+
+
+
+            <div class="overlayBody"></div>
+
+            
+
+            
+
+
+<div class="fixe-right">
+    <a id="ctl00_ucFixeRight_lkTarifs" class="fixe-right-tarifs" href="https://mobilites.grandannecy.fr/tarifs-1385">
+        <div class="fixe-picto">
+            <img src="assets/images/fixe-tarifs.svg" />
+        </div>
+        <div class="fixe-titre">
+            Tarifs
+        </div>
+
+    </a>
+    <a id="ctl00_ucFixeRight_lkMap" class="fixe-right-map" href="https://mobilites.grandannecy.fr/carte">
+
+        <div class="fixe-picto">
+            <img src="assets/images/fixe-map.svg" />
+        </div>
+        <div class="fixe-titre">
+            Itinéraires
+        </div>
+
+    </a>
+</div>
+
+
+            
+
+
+            <div class="content-all content-master">
+
+                <div id="cheminNav" class="ct">
+                    
+                        <a href='https://mobilites.grandannecy.fr' title='Accueil' >Accueil</a><span class='sepCheminNav'></span><span>En bus</span><span class='sepCheminNav'></span><span>Calcul d'itinéraires et fiches horaires</span>
+                    
+                </div>
+
+                <div class="contenuMaster">
+
+                    <div id="ctl00_divContenu" class="fullpage">
+		
+
+                        
+
+                        <div id="ctl00_panMilieu" class="contenuFullPage">
+			
+                            
+    
+        <div id="ctl00_cphPanMilieu_ctl00_dlContenus_panConteneurBloc_0" class="conteneurContenuBloc ccb1764 marginBottom30 marginTop100 divCenter">
+				
+            <div class='ctLarge'><div class='content'>
+
+            
+            <div id="ctl00_cphPanMilieu_ctl00_dlContenus_panMilieu1_0" class="contenuFull">
+					
+            <h2>Calculez votre itinéraire</h2>
+				</div>
+            
+            
+            
+            </div></div>
+            <div class="clear">
+            </div>
+        
+			</div>
+    
+        <div id="ctl00_cphPanMilieu_ctl00_dlContenus_panConteneurBloc_1" class="conteneurContenuBloc ccb837">
+				
+            <div class='ctLarge'><div class='content'>
+
+            
+            <div id="ctl00_cphPanMilieu_ctl00_dlContenus_panMilieu1_1" class="contenuFull">
+					
+            <iframe id="CarteInteractive" runat="server" title="Grand Annecy Mobil'été " src="https://annecy-mobilites.latitude-cartagene.com/" style="width:100%; height: 85vh;">
+</iframe>
+
+				</div>
+            
+            
+            
+            </div></div>
+            <div class="clear">
+            </div>
+        
+			</div>
+    
+        <div id="ctl00_cphPanMilieu_ctl00_dlContenus_panConteneurBloc_2" class="conteneurContenuBloc ccb1761 texteDouble bloc-blanc divCenter marginTop100">
+				
+            <div class='ctLarge'><div class='content'>
+
+            <div id="ctl00_cphPanMilieu_ctl00_dlContenus_panMilieuHaut_2" class="contenuTexte2ColHaut">
+					
+            <h1>Preparez votre itinéraire</h1><div><div style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; font-size: 15px; font-family: Athletics;">Préparez au mieux vos déplacements sur le territoire, que ce soit à vélo, en bus, en covoiturage ou à pied, toutes les solutions mobilités vous seront proposées.</div><div style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; font-size: 15px; font-family: Athletics;">La carte interactive (offres de mobilité &lt;-) vous permet de consulter toutes les informations en temps réel (bus, vélo, parkings, Citiz, etc).</div>&nbsp;</div>
+<div class="big Rose">Je télécharge ma fiche horaire...</div>
+				</div>
+            <div id="ctl00_cphPanMilieu_ctl00_dlContenus_panMilieu1_2" class="contenuTexte2ColG">
+					
+            <div class="big">Lignes Rythmo</div>
+<div>&nbsp;</div>
+<div>Les lignes Rythmo desservent les secteurs denses de l'agglomération du Grand Annecy avec une forte fréquence.&nbsp;<span style="font-family: Athletics; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400;"><br />
+</span></div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; font-size: 15px; font-family: Athletics;"> </div>
+<div style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; font-size: 15px; font-family: Athletics;"><span style=" 10px; 10px; text-align: center;"><a href="https://www.sibra.fr/app/uploads/2025/08/Ligne-1_RYTHMO_072025_800x145_BD_BAT.pdf" class="btn " style="background-color: #00a13a;">1</a> <span style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-size: 15px; font-family: Athletics;"><a href="https://www.sibra.fr/app/uploads/2025/08/Ligne-2_RYTHMO_072025_800x145_BD_BAT.pdf" class="btn " style="background-color: #e30613;">2</a> <span style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-size: 15px; font-family: Athletics;"><a href="https://www.sibra.fr/app/uploads/2025/08/Ligne-3_RYTHMO_072025_800x145_BD_BAT.pdf" class="btn " style="background-color: #2581c4;">3</a>&nbsp;</span></span></span><a href="https://www.sibra.fr/app/uploads/2025/08/Ligne-4_072025_700x145_BD_BAT.pdf" class="btn " style="font-family: inherit; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit; background-color: #7F2082;">4</a> <span style="font-family: Athletics; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; text-align: center;"><a href="https://www.sibra.fr/app/uploads/2025/08/Ligne-5_072025_600x145_BD_BAT.pdf" class="btn " style="background-color: #E5007D;">5</a>&nbsp;</span></div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+				</div>
+            <div id="ctl00_cphPanMilieu_ctl00_dlContenus_panMilieu2_2" class="contenuTexte2ColD">
+					
+            <div class="big">Lignes fortes</div>
+<div>&nbsp;</div>
+<div><span style="font-family: Athletics; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400;">Les lignes desservent des secteurs moins denses de l'agglomération avec une fréquence adaptée.&nbsp;</span></div>
+<div>&nbsp;</div>
+<div>&nbsp;&nbsp;</div>
+<div style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; font-size: 15px; font-family: Athletics;"> </div>
+<div style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; font-size: 15px; font-family: Athletics;"></div>
+<div style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; font-size: 15px; font-family: Athletics;"><span style="text-align: center;"><a href="https://www.sibra.fr/app/uploads/2025/08/Ligne-10_072025_600x145_BD_BAT.pdf" class="btn " style="background-color: #C5751A;">10</a> <span style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-size: 15px; font-family: Athletics;"><a href="https://www.sibra.fr/app/uploads/2025/08/Ligne-11_072025_600x145_BD_BAT.pdf" class="btn " style="background-color: #6758A2;">11</a> <span style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-size: 15px; font-family: Athletics;"><a href="https://www.sibra.fr/app/uploads/2025/08/Ligne-12_072025_800x145_BD_BAT.pdf" class="btn " style="background-color: #EC6607;">12</a> </span></span></span><a href="https://www.sibra.fr/app/uploads/2025/08/Ligne-13_072025_500x145_BD_BAT.pdf&quot;" class="btn " style="font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit; font-family: inherit; background-color: #00ABA8;">13</a>&nbsp;</div>
+<div>&nbsp;</div>
+<div>
+<div style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; font-size: 15px; font-family: Athletics;"><span style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; font-size: 15px; font-family: Athletics; text-align: center;"><a href="https://www.sibra.fr/app/uploads/2025/08/Ligne-14_072025_500x145_BD_BAT.pdf" class="btn " style="background-color: #008A4F;">14</a>&nbsp;<a href="https://www.calameo.com/read/007600498c1374b012cff" class="btn " style="background-color: #0061AD;">15</a></span></div>
+</div>
+<div class="big"></div>
+<div class="big"></div>
+				</div>
+            
+            
+            </div></div>
+            <div class="clear">
+            </div>
+        
+			</div>
+    
+        <div id="ctl00_cphPanMilieu_ctl00_dlContenus_panConteneurBloc_3" class="conteneurContenuBloc ccb1762 texteDouble bloc-blanc divCenter marginBottom30">
+				
+            <div class='ctLarge'><div class='content'>
+
+            <div id="ctl00_cphPanMilieu_ctl00_dlContenus_panMilieuHaut_3" class="contenuTexte2ColHaut">
+					
+            
+				</div>
+            <div id="ctl00_cphPanMilieu_ctl00_dlContenus_panMilieu1_3" class="contenuTexte2ColG">
+					
+            <div class="big">Lignes Secondaires</div>
+<div>&nbsp;</div>
+<div></div>
+<div id="pastingspan1">Ces 10 lignes desservent des secteurs moins denses de l’agglomération avec une fréquence adaptée.</div>
+<div>&nbsp;&nbsp;</div>
+<div>&nbsp;</div>
+<div style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; font-size: 15px; font-family: Athletics;"> </div>
+<div style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; font-size: 15px; font-family: Athletics;"><span style=" 10px; 10px; text-align: center;"><a href="https://www.sibra.fr/app/uploads/2025/08/Ligne-20_072025_500x145_BD_BAT.pdf" class="btn " style="background-color: #9A478C;">20</a> <span style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-size: 15px; font-family: Athletics;"><a href="https://www.sibra.fr/app/uploads/2025/08/Ligne-21_072025_500x145_BD_BAT.pdf" class="btn " style="background-color: #00ABD9;">21</a> <span style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-size: 15px; font-family: Athletics;"><a href="https://www.sibra.fr/app/uploads/2025/08/Ligne-22_072025_400x145_BD_BAT.pdf" class="btn " style="background-color: #EF87B5;">22</a>&nbsp;</span></span></span><a href="https://www.sibra.fr/app/uploads/2025/08/Ligne-23_072025_500x145_BD_BAT.pdf" class="btn " style="font-family: inherit; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit; background-color: #6594A7;">23</a></div>
+<div>&nbsp;</div>
+<div> <span style="font-family: Athletics; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; text-align: center;"><a href="https://www.sibra.fr/app/uploads/2025/09/Ligne-24_092025_400x145_BD_BAT-1.pdf" class="btn " style="background-color: #655B85;">24</a><span style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; font-size: 15px; font-family: Athletics;">&nbsp;<span style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-size: 15px; font-family: Athletics;"><a href="https://www.sibra.fr/app/uploads/2025/04/Ligne-25_2025_400x145_BD_BAT.pdf" class="btn " style="background-color: #8AB31D;">25</a>&nbsp;<span style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-size: 15px; font-family: Athletics;"><a href="https://www.sibra.fr/app/uploads/2025/08/Ligne-26_072025_200x145_BD_BAT.pdf" class="btn " style="background-color: #117363;">26</a>&nbsp;</span></span></span><a href="https://www.sibra.fr/app/uploads/2025/08/Ligne-27_072025_400x145_BD_BAT.pdf" class="btn " style="font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit; font-family: inherit; background-color: #D84C8C;">27</a></span></div>
+<div>&nbsp;</div>
+<div> <span style="font-family: Athletics; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; text-align: center;"><a href="https://www.sibra.fr/app/uploads/2025/08/Ligne-28_072025_200x145_BD_BAT.pdf" class="btn " style="background-color: #66A628;">28</a><span style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; font-size: 15px; font-family: Athletics;">&nbsp;<span style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-size: 15px; font-family: Athletics;"><a href="https://www.sibra.fr/app/uploads/2025/08/Ligne-30_072025_300x145_BD_BAT.pdf" class="btn " style="background-color: #F39200;">30</a>&nbsp;<span <="" span=""></span></span></span></span></div>
+				</div>
+            <div id="ctl00_cphPanMilieu_ctl00_dlContenus_panMilieu2_3" class="contenuTexte2ColD">
+					
+            <div class="big">
+<div id="pastingspan1">Lignes interurbaines Pays d’Alby</div>
+<div id="pastingspan1">et Pays de Fillière</div>
+</div>
+<div>&nbsp;</div>
+<div></div>
+<div id="pastingspan1">En complément des lignes urbaines, le réseau Sibra propose 6 lignes interurbaines.</div>
+<div>&nbsp;&nbsp;</div>
+<div>&nbsp;</div>
+<div style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; font-size: 15px; font-family: Athletics;"> </div>
+<div style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; font-size: 15px; font-family: Athletics;"><span style=" 10px; 10px; text-align: center;"><a href="https://www.sibra.fr/app/uploads/2025/08/Ligne-40_072025_500x145_BD_BAT.pdf" class="btn " style="background-color: #8F7F69;">40</a> <span style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-size: 15px; font-family: Athletics;"><a href="https://www.sibra.fr/app/uploads/2025/08/Ligne-41_072025_400x145_BD_BAT.pdf" class="btn " style="background-color: #8F7F69;">41</a> <span style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-size: 15px; font-family: Athletics;"><a href="https://www.sibra.fr/app/uploads/2025/08/Ligne-42_072025_200x145_BD_BAT.pdf" class="btn " style="background-color: #8F7F69;">42</a></span></span></span></div>
+<div>&nbsp;</div>
+<div> <span style="font-family: Athletics; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; text-align: center;"><a href="https://www.sibra.fr/app/uploads/2025/08/Ligne-80_072025_500x145_HD_BAT.pdf" class="btn " style="font-family: inherit; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit; background-color: #6C5C46;">80</a>&nbsp;</span><a href="https://www.sibra.fr/app/uploads/2025/08/Ligne-81_072025_200x145_HD_BAT.pdf" class="btn " style="background-color: #6C5C46;">81</a><span style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; font-size: 15px; font-family: Athletics;">&nbsp;<span style="font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-size: 15px; font-family: Athletics;"><a href="https://www.sibra.fr/app/uploads/2025/08/Ligne-82_072025_600x145_BD_BAT.pdf" class="btn " style="background-color: #6C5C46;">82</a>&nbsp;<span <="" span=""></span></span></span></div>
+				</div>
+            
+            
+            </div></div>
+            <div class="clear">
+            </div>
+        
+			</div>
+    
+<script type="text/javascript">
+
+    // taille des uc mis en iFrame
+    function receive(e) {
+        let heightFrame;
+        let frame;
+        if (e.data.hauteurPopup != undefined) {
+            frame = e.source.frameElement;
+            // hauteur de la popup
+            // on recherche le parent avac le même nom de class
+            heightFrame = e.data.hauteurPopup != '100%' ? e.data.hauteurPopup + 'px' : e.data.hauteurPopup;
+            $("." + frame.classList[1]).animate({ height: heightFrame }, 800);
+        }
+        else if (e.data.hauteurBody != undefined) {
+            frame = e.source.frameElement;
+            heightFrame = e.data.hauteurBody != '100%' ? e.data.hauteurBody + 'px' : e.data.hauteurBody;
+            $("." + frame.classList[1]).css({ height: heightFrame });
+        }
+    }
+    window.addEventListener("message", receive, false);
+    document.addEventListener("DOMContentLoaded", () => {
+        Onglets();
+        tabs();
+        boonet.afterAsyncPostBack(function () {
+            Onglets();
+            tabs();
+        });
+        // https://github.com/sampotts/plyr
+        let videos = $('.videoContenu');
+        if (videos.length > 0) {
+            for (let i = 0, l = videos.length; i < l; i++) {
+                const player = new Plyr("#" + videos[i].children[0].id);
+            }
+        }
+        let swipers = document.querySelectorAll(".sw-contenu");
+        if (swipers.length > 0) {
+            swipers.forEach(sw => {
+                var sortirBullet = true;
+
+                //console.log($(newswiper).attr('id'));
+
+                var config = {
+                    //******* Paramètres/options *******
+
+                    //Direction
+                    direction: 'horizontal', //Direction slider
+                    slidesPerView: 1, //Nb de slide par vue
+                    spaceBetween: 0, //Espace entre les slides
+                    speed: 600, //Vitesse
+                    parallax: true, //Effet parallax sur le texte
+                    loop: true, // boucle
+                    watchOverflow: true,
+                    // Pagination
+                    pagination: {
+                        el: '#paginationswip-' + sw.id,
+                        dynamicBullets: false,
+                        clickable: true,
+                    },
+                    // Navigation
+                    navigation: {
+                        nextEl: '#swipbtnnext-' + sw.id,
+                        prevEl: '#swipbtnprev-' + sw.id,
+                    },
+                    effect: 'slide',
+                };
+
+
+                if (false) {
+                    config['autoplay'] = {
+                        delay: 2000,
+                    }
+                }
+                else {
+                    config['autoplay'] = false
+                }
+                var _ = new Swiper(sw, config);
+            });
+        }
+        let swipersDroit = document.querySelectorAll(".sw-contenu-droit");
+        if (swipersDroit.length > 0) {
+            swipersDroit.forEach(sw => {
+                var sortirBullet = true;
+                var config = {
+                    //******* Paramètres/options *******
+
+                    //Direction
+                    direction: 'horizontal', //Direction slider
+                    slidesPerView: 1, //Nb de slide par vue
+                    spaceBetween: 0, //Espace entre les slides
+                    speed: 600, //Vitesse
+                    parallax: true, //Effet parallax sur le texte
+                    loop: true, // boucle
+                    watchOverflow: true,
+                    // Pagination
+                    pagination: {
+                        el: '#paginationswip-' + sw.id,
+                        dynamicBullets: false,
+                        clickable: true,
+                    },
+                    // Navigation
+                    navigation: {
+                        nextEl: '#swipbtnnext-' + sw.id,
+                        prevEl: '#swipbtnprev-' + sw.id,
+                    },
+                    effect: 'slide',
+                };
+                if (false) {
+                    config['autoplay'] = {
+                        delay: 2000,
+                    }
+                }
+                else {
+                    config['autoplay'] = false
+                }
+                var _ = new Swiper(sw, config);
+            });
+        }
+        function Onglets() {
+
+            let titres = document.querySelectorAll(".Onglets-titre");
+            if (titres.length > 0) {
+                for (var titre of titres) {
+                    titre.addEventListener("click", (e) => {
+
+                        if (e.currentTarget.classList.contains("open")) {
+                            e.currentTarget.classList.remove("open");
+                            e.currentTarget.nextElementSibling.classList.add("hide");
+                        }
+                        else {
+                            e.currentTarget.classList.add("open");
+                            e.currentTarget.nextElementSibling.classList.remove("hide");
+                        }
+                        e.preventDefault();
+                    });
+                }
+            }
+        }
+
+        function tabs() {
+            let tabs = document.querySelectorAll('.js-tab');
+            tabs.forEach(t => {
+                let head = t.querySelector("[class^=tab-label-content]");
+                let btns = head.querySelectorAll("[class^=tab-head]");
+                let tabContents = t.querySelectorAll("[class^=tab-enfant]");
+                btns.forEach((h, i) => {
+
+                    h.addEventListener("click", (e) => {
+                        let c = e.currentTarget;
+                        c.classList.toggle("actif");
+                        btns.forEach(b => {
+                            if (b.id != c.id) {
+                                b.classList.remove("actif");
+                            }
+                        });
+
+                        tabContents.forEach(tc => {
+                            if (tc.id != c.id) {
+                                tc.classList.remove("actif");
+                            }
+                            else {
+                                tc.classList.add("actif");
+                            }
+                        });
+
+                    });
+                });
+            });
+        }
+        // les chiffres
+        gsap.registerPlugin(ScrollTrigger);
+        let compteurs = document.querySelectorAll(".compteur");
+        compteurs.forEach((el) => {
+            new Compteur(
+                {
+                    el: el,
+                    auto: false,
+                    animation: 'count',
+                    format: 'd',
+                    value: el.dataset.end == 0 ? null : el.dataset.start,
+                    minIntegerLen: minIntegerLen = el.dataset.start.length,
+                });
+            ScrollTrigger.create({
+                trigger: el.parentElement.parentElement,
+                start: "top 30%",
+                //end: "center 20%",
+                //markers: true,
+                onEnter: () => {
+                    el.compteur.value = el.dataset.end == 0 ? null : el.dataset.start;
+                    el.compteur.update(el.dataset.start);
+                },
+
+                onEnterBack: () => {
+                    el.compteur.value = el.dataset.end == 0 ? null : el.dataset.start;
+                    el.compteur.update(el.dataset.start);
+                }
+            });
+        });
+
+
+    });
+</script>
+
+
+    
+
+
+    
+
+    
+
+                            <div id="ctl00_ctl10_panTitreTexteBas" class="ct txtTitrePageSupplement">
+				<div class="grid_12">      </div>
+			</div>
+<div id="ctl00_ctl10_panTexteBas" class="ct txtPageSupplement">
+				<article><div class="read-more js-read-more" data-rm-words="250" data-see-more="Lire +" data-show-less="Lire -">      </div></article
+			</div>
+                        
+		</div>
+
+                        
+                    
+	</div>
+
+                </div>
+
+            </div>
+
+
+            <div class="illust-footer">
+                <img src="assets/images/annecy_deco.svg" />
+            </div>
+
+            <footer>
+                
+
+
+
+
+<div class="footer-content ct">
+                <div class="footer-content-col logoMultiple">
+                    <img src="assets/images/logoGrandAnnecy.svg" />    
+                    <img src="assets/images/logomobilite.jpg" style="max-width:133px;" />
+                </div>
+                <div class="footer-sep"></div>
+                <div class="footer-content-col col-liens">
+                    <div class="footer-content-col-titre">
+                        Grand Annecy Mobilités
+                    </div>
+                    
+                    <div class="footer-content-col-liens">
+                        <a href="/pro-presse-1386">Espace Pro / Presse</a>
+                        
+                    </div>
+                </div>
+                <div class="footer-sep"></div>
+                <div class="footer-content-col">
+                    <div class="rs">
+                        <a href="https://www.facebook.com/grandannecymobilites" target="_blank" class="fb">
+                            <img src="assets/images/fb.svg" />
+                        </a>
+                        <a href="https://www.instagram.com/mobilites.grandannecy/" target="_blank" class="insta">
+                            <img src="assets/images/insta.svg" />
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+                
+<div id="crosslink" class="crosslink">
+    <a href="https://mobilites.grandannecy.fr/fr/mentions-legales-56">Mentions légales</a> - <a href="javascript:openAxeptioCookies()"> Voir vos préférences cookies</a>- <a href="https://mobilites.grandannecy.fr/mentions-legales-56#credits">Crédits</a> - <a href="https://mobilites.grandannecy.fr/fr/donnees-personnelles-1277">Données personnelles</a>
+
+</div>
+            </footer>
+
+
+
+
+            
+
+            
+
+            <div class="up">
+                <img src="assets/images/up.svg" />
+            </div>
+
+
+        
+</div>
+        
+        <script type="text/javascript">
+            $(function () {
+                //gestion des scrolls
+                //le offset sert à arreter le scroll avant (ou après) la balise
+                $('a[href^="#"]').smoothScroll({ offset: -50 });
+
+                //gestion des swipebox
+                $('.swipebox').swipebox();
+
+                // GESTION COMPTE / PANIER, pour éviter que les 2 volets soient ouvert en même temps
+
+                //$('.toggleSmallCart').on('mouseover', function () {
+                //    $(".hover-panier").css("height", "0");
+                //});
+
+                // ANIM MENU, AU SCROLL
+
+                //$(window).scroll(function () {
+                //    var header = ($(".deconnexionCt").outerHeight());
+                //    $(".hover-panier").css("top", header);
+                //    $(".btq-WrapPanier").css("top", header);
+
+                //    if ($(window).scrollTop() > 0) {
+                //        $("header").addClass("header-scroll");
+                //    }
+
+                //    else {
+                //        $("header").removeClass("header-scroll");
+
+                //    }
+                //});
+
+                // fonction haut de page
+
+                $('.up').on('click', function () {
+                    $('html, body').animate({ scrollTop: 0 }, 'fast');
+                    return false;
+                });
+
+                //Masque le bandeau slider si vide
+                if ($(".bandeauSliderMaster").innerHTML = '') {
+                    $(".bandeauSliderMaster").hide();
+                }
+            });
+        </script>
+        
+        
+            <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KMBD4MN"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="4131B5EF" />
+</div></form>
+</body>
+</html>

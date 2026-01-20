@@ -1,0 +1,8 @@
+{
+  "datasetId": "annecy_gbfs",
+  "datasetVersion": "v0.1",
+  "source": "https://gbfs.partners.fifteen.eu/gbfs/2.2/annecy/en/gbfs.json",
+  "sourceType": "gbfs",
+  "extractionDate": "2026-01-20",
+  "notes": "Snapshot of GBFS feeds. station_information and station_status are stored locally. Refresh manually when needed."
+}

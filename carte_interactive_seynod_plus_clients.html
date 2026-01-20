@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_5ae6034d8eb0b19ccd7c61455d5f4d7b {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_5ae6034d8eb0b19ccd7c61455d5f4d7b" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_5ae6034d8eb0b19ccd7c61455d5f4d7b = L.map(
+                "map_5ae6034d8eb0b19ccd7c61455d5f4d7b",
+                {
+                    center: [45.8855, 6.0975],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_5ae6034d8eb0b19ccd7c61455d5f4d7b);
+
+            
+
+        
+    
+            var tile_layer_0c3be83f900a1d0a0b925181282d38ff = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_5ae6034d8eb0b19ccd7c61455d5f4d7b);
+        
+    
+            var feature_group_5917bc2cf369c9f4df7fc98e6696480e = L.featureGroup(
+                {}
+            ).addTo(map_5ae6034d8eb0b19ccd7c61455d5f4d7b);
+        
+    
+            var marker_90fcffa5d5031f4b4c8edbcf5b6e9e4d = L.marker(
+                [45.883301, 6.08333],
+                {}
+            ).addTo(feature_group_5917bc2cf369c9f4df7fc98e6696480e);
+        
+    
+        var popup_9db040cd436556ec15b0d400f5e54c9e = L.popup({"maxWidth": 320});
+
+        
+            var html_28711e79e59950a5aab45fca73b5b285 = $(`<div id="html_28711e79e59950a5aab45fca73b5b285" style="width: 100.0%; height: 100.0%;"><b>Collège Le Semnoz (référence)</b><br/><i>Autres</i></div>`)[0];
+            popup_9db040cd436556ec15b0d400f5e54c9e.setContent(html_28711e79e59950a5aab45fca73b5b285);
+        
+
+        marker_90fcffa5d5031f4b4c8edbcf5b6e9e4d.bindPopup(popup_9db040cd436556ec15b0d400f5e54c9e)
+        ;
+
+        
+    
+    
+            marker_90fcffa5d5031f4b4c8edbcf5b6e9e4d.bindTooltip(
+                `<div>
+                     Collège Le Semnoz (référence)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a62c6ed4d5a0d3ba86e4b5a14c7905d0 = L.marker(
+                [45.89653, 6.09521],
+                {}
+            ).addTo(feature_group_5917bc2cf369c9f4df7fc98e6696480e);
+        
+    
+        var popup_47b68670ee3f3590d9a3fc942e10c586 = L.popup({"maxWidth": 320});
+
+        
+            var html_1ae6e7f774d48542ebf084ec7baaa7f1 = $(`<div id="html_1ae6e7f774d48542ebf084ec7baaa7f1" style="width: 100.0%; height: 100.0%;"><b>Lycée Charles Baudelaire (référence)</b><br/><i>Autres</i></div>`)[0];
+            popup_47b68670ee3f3590d9a3fc942e10c586.setContent(html_1ae6e7f774d48542ebf084ec7baaa7f1);
+        
+
+        marker_a62c6ed4d5a0d3ba86e4b5a14c7905d0.bindPopup(popup_47b68670ee3f3590d9a3fc942e10c586)
+        ;
+
+        
+    
+    
+            marker_a62c6ed4d5a0d3ba86e4b5a14c7905d0.bindTooltip(
+                `<div>
+                     Lycée Charles Baudelaire (référence)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c20d3d208fb80aa9921c4396191fa205 = L.marker(
+                [45.8732771, 6.0865123],
+                {}
+            ).addTo(feature_group_5917bc2cf369c9f4df7fc98e6696480e);
+        
+    
+        var popup_d660b2fb8960266459049d2f0e36e515 = L.popup({"maxWidth": 320});
+
+        
+            var html_17aa021f9907cea1ce5e549a57eef07d = $(`<div id="html_17aa021f9907cea1ce5e549a57eef07d" style="width: 100.0%; height: 100.0%;"><b>Pôle 'Val Semnoz' (zone candidate)</b><br/><i>Autres</i></div>`)[0];
+            popup_d660b2fb8960266459049d2f0e36e515.setContent(html_17aa021f9907cea1ce5e549a57eef07d);
+        
+
+        marker_c20d3d208fb80aa9921c4396191fa205.bindPopup(popup_d660b2fb8960266459049d2f0e36e515)
+        ;
+
+        
+    
+    
+            marker_c20d3d208fb80aa9921c4396191fa205.bindTooltip(
+                `<div>
+                     Pôle 'Val Semnoz' (zone candidate)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_674c3ed9ac332667ff8a7fbdc5cbfc7d = L.marker(
+                [45.88717, 6.07201],
+                {}
+            ).addTo(feature_group_5917bc2cf369c9f4df7fc98e6696480e);
+        
+    
+        var popup_3dcdb495bb88c0adbe76ea151ccb8022 = L.popup({"maxWidth": 320});
+
+        
+            var html_171c0fd6937e195d9001c3f60e8c59f1 = $(`<div id="html_171c0fd6937e195d9001c3f60e8c59f1" style="width: 100.0%; height: 100.0%;"><b>Route des Creuses / Les Bressis (zone candidate)</b><br/><i>Autres</i></div>`)[0];
+            popup_3dcdb495bb88c0adbe76ea151ccb8022.setContent(html_171c0fd6937e195d9001c3f60e8c59f1);
+        
+
+        marker_674c3ed9ac332667ff8a7fbdc5cbfc7d.bindPopup(popup_3dcdb495bb88c0adbe76ea151ccb8022)
+        ;
+
+        
+    
+    
+            marker_674c3ed9ac332667ff8a7fbdc5cbfc7d.bindTooltip(
+                `<div>
+                     Route des Creuses / Les Bressis (zone candidate)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c51c8648e7e97777b626951d87326dc9 = L.marker(
+                [45.88976, 6.10117],
+                {}
+            ).addTo(feature_group_5917bc2cf369c9f4df7fc98e6696480e);
+        
+    
+        var popup_d50130eb7194df2d0ade6a2e7185f75b = L.popup({"maxWidth": 320});
+
+        
+            var html_c3a0d2306133f908b94786f4fad66519 = $(`<div id="html_c3a0d2306133f908b94786f4fad66519" style="width: 100.0%; height: 100.0%;"><b>Seynod centre / Champ Fleuri (repère accessibilité)</b><br/><i>Autres</i></div>`)[0];
+            popup_d50130eb7194df2d0ade6a2e7185f75b.setContent(html_c3a0d2306133f908b94786f4fad66519);
+        
+
+        marker_c51c8648e7e97777b626951d87326dc9.bindPopup(popup_d50130eb7194df2d0ade6a2e7185f75b)
+        ;
+
+        
+    
+    
+            marker_c51c8648e7e97777b626951d87326dc9.bindTooltip(
+                `<div>
+                     Seynod centre / Champ Fleuri (repère accessibilité)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_64437e9fad99b666343bfcc52e79bb73 = L.marker(
+                [45.8727, 6.0839],
+                {}
+            ).addTo(feature_group_5917bc2cf369c9f4df7fc98e6696480e);
+        
+    
+        var popup_1fe9b5a360cbc2579ffa6c7dd386842b = L.popup({"maxWidth": 320});
+
+        
+            var html_4fb1ef9a1ccf1fc22a67a1a902130815 = $(`<div id="html_4fb1ef9a1ccf1fc22a67a1a902130815" style="width: 100.0%; height: 100.0%;"><b>Val Semnoz – arrière zone commerciale</b><br/><i>Autres</i></div>`)[0];
+            popup_1fe9b5a360cbc2579ffa6c7dd386842b.setContent(html_4fb1ef9a1ccf1fc22a67a1a902130815);
+        
+
+        marker_64437e9fad99b666343bfcc52e79bb73.bindPopup(popup_1fe9b5a360cbc2579ffa6c7dd386842b)
+        ;
+
+        
+    
+    
+            marker_64437e9fad99b666343bfcc52e79bb73.bindTooltip(
+                `<div>
+                     Val Semnoz – arrière zone commerciale
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e67eb66bc8dea2b84212af0669ea8488 = L.marker(
+                [45.8756, 6.0808],
+                {}
+            ).addTo(feature_group_5917bc2cf369c9f4df7fc98e6696480e);
+        
+    
+        var popup_50132a22150967f5493d72796847160d = L.popup({"maxWidth": 320});
+
+        
+            var html_a9eac068b49d9549355459603c3460df = $(`<div id="html_a9eac068b49d9549355459603c3460df" style="width: 100.0%; height: 100.0%;"><b>Route de Périaz – secteur activités</b><br/><i>Autres</i></div>`)[0];
+            popup_50132a22150967f5493d72796847160d.setContent(html_a9eac068b49d9549355459603c3460df);
+        
+
+        marker_e67eb66bc8dea2b84212af0669ea8488.bindPopup(popup_50132a22150967f5493d72796847160d)
+        ;
+
+        
+    
+    
+            marker_e67eb66bc8dea2b84212af0669ea8488.bindTooltip(
+                `<div>
+                     Route de Périaz – secteur activités
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_47552fbc2623cb14eb06ced0b270efb3 = L.marker(
+                [45.8859, 6.0709],
+                {}
+            ).addTo(feature_group_5917bc2cf369c9f4df7fc98e6696480e);
+        
+    
+        var popup_5e77905aceb56c94be90c2b5b87ee989 = L.popup({"maxWidth": 320});
+
+        
+            var html_6194fb81b235ee76f85c9d8225052d77 = $(`<div id="html_6194fb81b235ee76f85c9d8225052d77" style="width: 100.0%; height: 100.0%;"><b>Route des Creuses – Bressis sud</b><br/><i>Autres</i></div>`)[0];
+            popup_5e77905aceb56c94be90c2b5b87ee989.setContent(html_6194fb81b235ee76f85c9d8225052d77);
+        
+
+        marker_47552fbc2623cb14eb06ced0b270efb3.bindPopup(popup_5e77905aceb56c94be90c2b5b87ee989)
+        ;
+
+        
+    
+    
+            marker_47552fbc2623cb14eb06ced0b270efb3.bindTooltip(
+                `<div>
+                     Route des Creuses – Bressis sud
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d53bff30f0b4f6dd03f69414193887c0 = L.marker(
+                [45.8656, 6.0782],
+                {}
+            ).addTo(feature_group_5917bc2cf369c9f4df7fc98e6696480e);
+        
+    
+        var popup_327da1b93d12ed55b14bcdf14183c0d3 = L.popup({"maxWidth": 320});
+
+        
+            var html_a55d7844025ea759def97556e55efdea = $(`<div id="html_a55d7844025ea759def97556e55efdea" style="width: 100.0%; height: 100.0%;"><b>Chemin des Prés Bouveaux</b><br/><i>Autres</i></div>`)[0];
+            popup_327da1b93d12ed55b14bcdf14183c0d3.setContent(html_a55d7844025ea759def97556e55efdea);
+        
+
+        marker_d53bff30f0b4f6dd03f69414193887c0.bindPopup(popup_327da1b93d12ed55b14bcdf14183c0d3)
+        ;
+
+        
+    
+    
+            marker_d53bff30f0b4f6dd03f69414193887c0.bindTooltip(
+                `<div>
+                     Chemin des Prés Bouveaux
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_de07a21095012f45d34d28a4e56b4731 = L.marker(
+                [45.8619, 6.0761],
+                {}
+            ).addTo(feature_group_5917bc2cf369c9f4df7fc98e6696480e);
+        
+    
+        var popup_d77676e3e6da132dd2fa89c46970bd1f = L.popup({"maxWidth": 320});
+
+        
+            var html_826c78f6f651bc08a70f3137049a81d5 = $(`<div id="html_826c78f6f651bc08a70f3137049a81d5" style="width: 100.0%; height: 100.0%;"><b>Route de Vieugy – limite Seynod</b><br/><i>Autres</i></div>`)[0];
+            popup_d77676e3e6da132dd2fa89c46970bd1f.setContent(html_826c78f6f651bc08a70f3137049a81d5);
+        
+
+        marker_de07a21095012f45d34d28a4e56b4731.bindPopup(popup_d77676e3e6da132dd2fa89c46970bd1f)
+        ;
+
+        
+    
+    
+            marker_de07a21095012f45d34d28a4e56b4731.bindTooltip(
+                `<div>
+                     Route de Vieugy – limite Seynod
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_214f18e289d1407bae497baa2ac3751b = L.featureGroup(
+                {}
+            ).addTo(map_5ae6034d8eb0b19ccd7c61455d5f4d7b);
+        
+    
+            var marker_9b3d64d58c64b408608d06855ed393f2 = L.marker(
+                [45.896154628297, 6.0958680798052],
+                {}
+            ).addTo(feature_group_214f18e289d1407bae497baa2ac3751b);
+        
+    
+        var popup_aa30a19f18d14331d6a9b197511b7b10 = L.popup({"maxWidth": 320});
+
+        
+            var html_e978253773892562bf96d280ba787daf = $(`<div id="html_e978253773892562bf96d280ba787daf" style="width: 100.0%; height: 100.0%;"><b>Lycée Charles Baudelaire (Cran-Gevrier)</b><br/><i>École / lycée</i><br/>LGT Charles Baudelaire (GPS BV Grenoble)</div>`)[0];
+            popup_aa30a19f18d14331d6a9b197511b7b10.setContent(html_e978253773892562bf96d280ba787daf);
+        
+
+        marker_9b3d64d58c64b408608d06855ed393f2.bindPopup(popup_aa30a19f18d14331d6a9b197511b7b10)
+        ;
+
+        
+    
+    
+            marker_9b3d64d58c64b408608d06855ed393f2.bindTooltip(
+                `<div>
+                     Lycée Charles Baudelaire (Cran-Gevrier)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3a52472cc43b40ae24394e5b270d25f7 = L.marker(
+                [45.897630522772, 6.1208487586405],
+                {}
+            ).addTo(feature_group_214f18e289d1407bae497baa2ac3751b);
+        
+    
+        var popup_c3509979f235d314b0e930c040e25748 = L.popup({"maxWidth": 320});
+
+        
+            var html_c93484412aa3a8c5bf16c37d8a764264 = $(`<div id="html_c93484412aa3a8c5bf16c37d8a764264" style="width: 100.0%; height: 100.0%;"><b>Lycée Gabriel Fauré</b><br/><i>École / lycée</i><br/>LGT Gabriel Fauré (GPS BV Grenoble)</div>`)[0];
+            popup_c3509979f235d314b0e930c040e25748.setContent(html_c93484412aa3a8c5bf16c37d8a764264);
+        
+
+        marker_3a52472cc43b40ae24394e5b270d25f7.bindPopup(popup_c3509979f235d314b0e930c040e25748)
+        ;
+
+        
+    
+    
+            marker_3a52472cc43b40ae24394e5b270d25f7.bindTooltip(
+                `<div>
+                     Lycée Gabriel Fauré
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_143e459a446352ff8fa33987028c6aee = L.marker(
+                [45.905923, 6.127644],
+                {}
+            ).addTo(feature_group_214f18e289d1407bae497baa2ac3751b);
+        
+    
+        var popup_b142d6bd6384dbfa645a22a04cdb7c7d = L.popup({"maxWidth": 320});
+
+        
+            var html_2b9acc5c3f278c6b78edfa6e5751b307 = $(`<div id="html_2b9acc5c3f278c6b78edfa6e5751b307" style="width: 100.0%; height: 100.0%;"><b>Lycée Claude-Louis Berthollet</b><br/><i>École / lycée</i><br/>Lycée Berthollet (GPS source publique)</div>`)[0];
+            popup_b142d6bd6384dbfa645a22a04cdb7c7d.setContent(html_2b9acc5c3f278c6b78edfa6e5751b307);
+        
+
+        marker_143e459a446352ff8fa33987028c6aee.bindPopup(popup_b142d6bd6384dbfa645a22a04cdb7c7d)
+        ;
+
+        
+    
+    
+            marker_143e459a446352ff8fa33987028c6aee.bindTooltip(
+                `<div>
+                     Lycée Claude-Louis Berthollet
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7df9ab693046889071a1cd9c4aac8658 = L.marker(
+                [45.893403910284, 6.1008759622298],
+                {}
+            ).addTo(feature_group_214f18e289d1407bae497baa2ac3751b);
+        
+    
+        var popup_27fd40a12cffafd7cbe042161c2b15df = L.popup({"maxWidth": 320});
+
+        
+            var html_e307b0b8cc18c84ce01c9838ac01b53a = $(`<div id="html_e307b0b8cc18c84ce01c9838ac01b53a" style="width: 100.0%; height: 100.0%;"><b>Lycée privé Les Bressis (Seynod)</b><br/><i>École / lycée</i><br/>LP privé Les Bressis (GPS BV Grenoble)</div>`)[0];
+            popup_27fd40a12cffafd7cbe042161c2b15df.setContent(html_e307b0b8cc18c84ce01c9838ac01b53a);
+        
+
+        marker_7df9ab693046889071a1cd9c4aac8658.bindPopup(popup_27fd40a12cffafd7cbe042161c2b15df)
+        ;
+
+        
+    
+    
+            marker_7df9ab693046889071a1cd9c4aac8658.bindTooltip(
+                `<div>
+                     Lycée privé Les Bressis (Seynod)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_e92425ac41db977aaa00ad372064f8e1 = L.featureGroup(
+                {}
+            ).addTo(map_5ae6034d8eb0b19ccd7c61455d5f4d7b);
+        
+    
+            var marker_9397f89c6fa7aaec781a200eeb2ab141 = L.marker(
+                [45.885072260942, 6.0951294577255],
+                {}
+            ).addTo(feature_group_e92425ac41db977aaa00ad372064f8e1);
+        
+    
+        var popup_fadb4ad7f92c92258ac4691e80ed2f1c = L.popup({"maxWidth": 320});
+
+        
+            var html_335c1b4f373e51f762918e6495573740 = $(`<div id="html_335c1b4f373e51f762918e6495573740" style="width: 100.0%; height: 100.0%;"><b>Collège Le Semnoz (Seynod)</b><br/><i>École / collège</i><br/>Collège Le Semnoz (GPS BV Grenoble)</div>`)[0];
+            popup_fadb4ad7f92c92258ac4691e80ed2f1c.setContent(html_335c1b4f373e51f762918e6495573740);
+        
+
+        marker_9397f89c6fa7aaec781a200eeb2ab141.bindPopup(popup_fadb4ad7f92c92258ac4691e80ed2f1c)
+        ;
+
+        
+    
+    
+            marker_9397f89c6fa7aaec781a200eeb2ab141.bindTooltip(
+                `<div>
+                     Collège Le Semnoz (Seynod)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ef49b7535b5316269492d571d1d3f82a = L.marker(
+                [45.884662554525, 6.1018552334883],
+                {}
+            ).addTo(feature_group_e92425ac41db977aaa00ad372064f8e1);
+        
+    
+        var popup_3d55e0d51f1a12db4dbf98edcbf67dd8 = L.popup({"maxWidth": 320});
+
+        
+            var html_29c4c6e5b84448089cc9347af492920d = $(`<div id="html_29c4c6e5b84448089cc9347af492920d" style="width: 100.0%; height: 100.0%;"><b>Collège privé St François - Les Cordeliers (Seynod)</b><br/><i>École / collège</i><br/>Collège privé St François (GPS BV Grenoble)</div>`)[0];
+            popup_3d55e0d51f1a12db4dbf98edcbf67dd8.setContent(html_29c4c6e5b84448089cc9347af492920d);
+        
+
+        marker_ef49b7535b5316269492d571d1d3f82a.bindPopup(popup_3d55e0d51f1a12db4dbf98edcbf67dd8)
+        ;
+
+        
+    
+    
+            marker_ef49b7535b5316269492d571d1d3f82a.bindTooltip(
+                `<div>
+                     Collège privé St François - Les Cordeliers (Seynod)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f1539f6b28a6d8e5f0234c73659f0841 = L.marker(
+                [45.902177230932, 6.1066103979134],
+                {}
+            ).addTo(feature_group_e92425ac41db977aaa00ad372064f8e1);
+        
+    
+        var popup_3a67a65f6996b5ccfc7891f644d84cf9 = L.popup({"maxWidth": 320});
+
+        
+            var html_ac508bb69a17e80352ca25cd170be1e7 = $(`<div id="html_ac508bb69a17e80352ca25cd170be1e7" style="width: 100.0%; height: 100.0%;"><b>Collège Beauregard (Cran-Gevrier)</b><br/><i>École / collège</i><br/>Collège Beauregard (GPS BV Grenoble)</div>`)[0];
+            popup_3a67a65f6996b5ccfc7891f644d84cf9.setContent(html_ac508bb69a17e80352ca25cd170be1e7);
+        
+
+        marker_f1539f6b28a6d8e5f0234c73659f0841.bindPopup(popup_3a67a65f6996b5ccfc7891f644d84cf9)
+        ;
+
+        
+    
+    
+            marker_f1539f6b28a6d8e5f0234c73659f0841.bindTooltip(
+                `<div>
+                     Collège Beauregard (Cran-Gevrier)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b8b37baa0b296629d7e0d17ba884833f = L.marker(
+                [45.896737741706, 6.1225019147216],
+                {}
+            ).addTo(feature_group_e92425ac41db977aaa00ad372064f8e1);
+        
+    
+        var popup_c1b15e79e447eedf3b96832968c2fa02 = L.popup({"maxWidth": 320});
+
+        
+            var html_188a50c4661245c0175cfd892214fb87 = $(`<div id="html_188a50c4661245c0175cfd892214fb87" style="width: 100.0%; height: 100.0%;"><b>Collège Les Balmettes (Annecy)</b><br/><i>École / collège</i><br/>Collège Les Balmettes (GPS BV Grenoble)</div>`)[0];
+            popup_c1b15e79e447eedf3b96832968c2fa02.setContent(html_188a50c4661245c0175cfd892214fb87);
+        
+
+        marker_b8b37baa0b296629d7e0d17ba884833f.bindPopup(popup_c1b15e79e447eedf3b96832968c2fa02)
+        ;
+
+        
+    
+    
+            marker_b8b37baa0b296629d7e0d17ba884833f.bindTooltip(
+                `<div>
+                     Collège Les Balmettes (Annecy)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_13f8592adf4fbe7e8c6775e10a505ec5 = L.marker(
+                [45.904310160804, 6.1260033450376],
+                {}
+            ).addTo(feature_group_e92425ac41db977aaa00ad372064f8e1);
+        
+    
+        var popup_99df464fba07518db90715c8fcce0e79 = L.popup({"maxWidth": 320});
+
+        
+            var html_fec0429da10f33514cee0fea4fe41c34 = $(`<div id="html_fec0429da10f33514cee0fea4fe41c34" style="width: 100.0%; height: 100.0%;"><b>Collège Raoul Blanchard (Annecy)</b><br/><i>École / collège</i><br/>Collège Raoul Blanchard (GPS BV Grenoble)</div>`)[0];
+            popup_99df464fba07518db90715c8fcce0e79.setContent(html_fec0429da10f33514cee0fea4fe41c34);
+        
+
+        marker_13f8592adf4fbe7e8c6775e10a505ec5.bindPopup(popup_99df464fba07518db90715c8fcce0e79)
+        ;
+
+        
+    
+    
+            marker_13f8592adf4fbe7e8c6775e10a505ec5.bindTooltip(
+                `<div>
+                     Collège Raoul Blanchard (Annecy)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4bed4926daa851b43c94136d1b77f30b = L.marker(
+                [45.922720267871, 6.1354933834045],
+                {}
+            ).addTo(feature_group_e92425ac41db977aaa00ad372064f8e1);
+        
+    
+        var popup_04b183634b2734b44302c0c5df48d5e5 = L.popup({"maxWidth": 320});
+
+        
+            var html_565c741c721714830df1618726b86bef = $(`<div id="html_565c741c721714830df1618726b86bef" style="width: 100.0%; height: 100.0%;"><b>Collège Évire (Annecy-le-Vieux)</b><br/><i>École / collège</i><br/>Collège Évire (GPS BV Grenoble)</div>`)[0];
+            popup_04b183634b2734b44302c0c5df48d5e5.setContent(html_565c741c721714830df1618726b86bef);
+        
+
+        marker_4bed4926daa851b43c94136d1b77f30b.bindPopup(popup_04b183634b2734b44302c0c5df48d5e5)
+        ;
+
+        
+    
+    
+            marker_4bed4926daa851b43c94136d1b77f30b.bindTooltip(
+                `<div>
+                     Collège Évire (Annecy-le-Vieux)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_d9047b75f7c447b0b82a82c3178ea657 = L.featureGroup(
+                {}
+            ).addTo(map_5ae6034d8eb0b19ccd7c61455d5f4d7b);
+        
+    
+            var marker_988b91513c2c453d7ab2f71023743114 = L.marker(
+                [45.886924938902, 6.0975692137351],
+                {}
+            ).addTo(feature_group_d9047b75f7c447b0b82a82c3178ea657);
+        
+    
+        var popup_3770d91fc3943c28e127209207533cbb = L.popup({"maxWidth": 320});
+
+        
+            var html_4e23e9610d2209223c2bae1580e4a8e9 = $(`<div id="html_4e23e9610d2209223c2bae1580e4a8e9" style="width: 100.0%; height: 100.0%;"><b>École primaire Le Muraillon (Seynod)</b><br/><i>École / primaire</i><br/>École Le Muraillon (GPS BV Grenoble)</div>`)[0];
+            popup_3770d91fc3943c28e127209207533cbb.setContent(html_4e23e9610d2209223c2bae1580e4a8e9);
+        
+
+        marker_988b91513c2c453d7ab2f71023743114.bindPopup(popup_3770d91fc3943c28e127209207533cbb)
+        ;
+
+        
+    
+    
+            marker_988b91513c2c453d7ab2f71023743114.bindTooltip(
+                `<div>
+                     École primaire Le Muraillon (Seynod)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8892e8ecf3e9440feb4941d455100e05 = L.marker(
+                [45.862371488388, 6.0855742333727],
+                {}
+            ).addTo(feature_group_d9047b75f7c447b0b82a82c3178ea657);
+        
+    
+        var popup_657b610121927be9213363d9ab39535b = L.popup({"maxWidth": 320});
+
+        
+            var html_759bd817e98f2cb453acb5d27ccbe3e3 = $(`<div id="html_759bd817e98f2cb453acb5d27ccbe3e3" style="width: 100.0%; height: 100.0%;"><b>École primaire Vieugy (Seynod)</b><br/><i>École / primaire</i><br/>École Vieugy (GPS BV Grenoble)</div>`)[0];
+            popup_657b610121927be9213363d9ab39535b.setContent(html_759bd817e98f2cb453acb5d27ccbe3e3);
+        
+
+        marker_8892e8ecf3e9440feb4941d455100e05.bindPopup(popup_657b610121927be9213363d9ab39535b)
+        ;
+
+        
+    
+    
+            marker_8892e8ecf3e9440feb4941d455100e05.bindTooltip(
+                `<div>
+                     École primaire Vieugy (Seynod)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_a76e67ddd840773dd4d26c2d77067fa6 = L.featureGroup(
+                {}
+            ).addTo(map_5ae6034d8eb0b19ccd7c61455d5f4d7b);
+        
+    
+            var marker_c132f25424c2af9b0ee00b3eb09d39bf = L.marker(
+                [45.91925, 6.1581],
+                {}
+            ).addTo(feature_group_a76e67ddd840773dd4d26c2d77067fa6);
+        
+    
+        var popup_8fbb7204d85708684bcc165b0b3731c5 = L.popup({"maxWidth": 320});
+
+        
+            var html_aef0dba3427458b34d100d878f3b2853 = $(`<div id="html_aef0dba3427458b34d100d878f3b2853" style="width: 100.0%; height: 100.0%;"><b>Campus USMB Annecy-le-Vieux (5 chemin de Bellevue)</b><br/><i>Pôle clients</i><br/>Campus Annecy-le-Vieux (coord. Mappy)</div>`)[0];
+            popup_8fbb7204d85708684bcc165b0b3731c5.setContent(html_aef0dba3427458b34d100d878f3b2853);
+        
+
+        marker_c132f25424c2af9b0ee00b3eb09d39bf.bindPopup(popup_8fbb7204d85708684bcc165b0b3731c5)
+        ;
+
+        
+    
+    
+            marker_c132f25424c2af9b0ee00b3eb09d39bf.bindTooltip(
+                `<div>
+                     Campus USMB Annecy-le-Vieux (5 chemin de Bellevue)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f2f30b9a6bd6dda5fea685479c7c65b8 = L.marker(
+                [45.87504200438661, 6.0866709457720845],
+                {}
+            ).addTo(feature_group_a76e67ddd840773dd4d26c2d77067fa6);
+        
+    
+        var popup_99ad06bd50d1126b703145b7b78ce668 = L.popup({"maxWidth": 320});
+
+        
+            var html_51c51db7aae06adf0a23761183e634c5 = $(`<div id="html_51c51db7aae06adf0a23761183e634c5" style="width: 100.0%; height: 100.0%;"><b>La Galerie Val Semnoz / Décathlon (Seynod)</b><br/><i>Pôle clients</i><br/>Val Semnoz / Decathlon (coord. Attitude Montagne)</div>`)[0];
+            popup_99ad06bd50d1126b703145b7b78ce668.setContent(html_51c51db7aae06adf0a23761183e634c5);
+        
+
+        marker_f2f30b9a6bd6dda5fea685479c7c65b8.bindPopup(popup_99ad06bd50d1126b703145b7b78ce668)
+        ;
+
+        
+    
+    
+            marker_f2f30b9a6bd6dda5fea685479c7c65b8.bindTooltip(
+                `<div>
+                     La Galerie Val Semnoz / Décathlon (Seynod)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f28da50cc5029e0e642b43397de8760a = L.marker(
+                [45.887289857423, 6.1027550697327],
+                {}
+            ).addTo(feature_group_a76e67ddd840773dd4d26c2d77067fa6);
+        
+    
+        var popup_406c1a96b0a1706aaad9865149007440 = L.popup({"maxWidth": 320});
+
+        
+            var html_a7695871dce73d3e2b7c907b6467ad93 = $(`<div id="html_a7695871dce73d3e2b7c907b6467ad93" style="width: 100.0%; height: 100.0%;"><b>Skatepark de Seynod</b><br/><i>Pôle clients</i><br/>Skatepark Seynod (coord. Spotland)</div>`)[0];
+            popup_406c1a96b0a1706aaad9865149007440.setContent(html_a7695871dce73d3e2b7c907b6467ad93);
+        
+
+        marker_f28da50cc5029e0e642b43397de8760a.bindPopup(popup_406c1a96b0a1706aaad9865149007440)
+        ;
+
+        
+    
+    
+            marker_f28da50cc5029e0e642b43397de8760a.bindTooltip(
+                `<div>
+                     Skatepark de Seynod
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_470543a98a672ef6b8756b2c6b37015c = L.marker(
+                [45.9164972, 6.1180544],
+                {}
+            ).addTo(feature_group_a76e67ddd840773dd4d26c2d77067fa6);
+        
+    
+        var popup_afebfa6e0be12f1d1295c0f4b9e8df97 = L.popup({"maxWidth": 320});
+
+        
+            var html_7593859189d6cb2a1fbf30c0839595bd = $(`<div id="html_7593859189d6cb2a1fbf30c0839595bd" style="width: 100.0%; height: 100.0%;"><b>Parc des Sports d'Annecy</b><br/><i>Pôle clients</i><br/>Parc des Sports (coord. Wikipedia)</div>`)[0];
+            popup_afebfa6e0be12f1d1295c0f4b9e8df97.setContent(html_7593859189d6cb2a1fbf30c0839595bd);
+        
+
+        marker_470543a98a672ef6b8756b2c6b37015c.bindPopup(popup_afebfa6e0be12f1d1295c0f4b9e8df97)
+        ;
+
+        
+    
+    
+            marker_470543a98a672ef6b8756b2c6b37015c.bindTooltip(
+                `<div>
+                     Parc des Sports d'Annecy
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_71d82445273272fd217bbae8270704cf = L.marker(
+                [45.920239, 6.120904],
+                {}
+            ).addTo(feature_group_a76e67ddd840773dd4d26c2d77067fa6);
+        
+    
+        var popup_021162c6d9ff091551ff7806c7482887 = L.popup({"maxWidth": 320});
+
+        
+            var html_da87b5ba88eb59019e23757ad0b5d98e = $(`<div id="html_da87b5ba88eb59019e23757ad0b5d98e" style="width: 100.0%; height: 100.0%;"><b>Complexe Piscine/Patinoire Jean Régis</b><br/><i>Pôle clients</i><br/>Jean Régis (coord. Eurohockey)</div>`)[0];
+            popup_021162c6d9ff091551ff7806c7482887.setContent(html_da87b5ba88eb59019e23757ad0b5d98e);
+        
+
+        marker_71d82445273272fd217bbae8270704cf.bindPopup(popup_021162c6d9ff091551ff7806c7482887)
+        ;
+
+        
+    
+    
+            marker_71d82445273272fd217bbae8270704cf.bindTooltip(
+                `<div>
+                     Complexe Piscine/Patinoire Jean Régis
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var layer_control_2fad23d7ff2617dd9c89399583890927 = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_0c3be83f900a1d0a0b925181282d38ff,
+                },
+                overlays :  {
+                    "Autres" : feature_group_5917bc2cf369c9f4df7fc98e6696480e,
+                    "\u00c9cole / lyc\u00e9e" : feature_group_214f18e289d1407bae497baa2ac3751b,
+                    "\u00c9cole / coll\u00e8ge" : feature_group_e92425ac41db977aaa00ad372064f8e1,
+                    "\u00c9cole / primaire" : feature_group_d9047b75f7c447b0b82a82c3178ea657,
+                    "P\u00f4le clients" : feature_group_a76e67ddd840773dd4d26c2d77067fa6,
+                },
+            };
+            L.control.layers(
+                layer_control_2fad23d7ff2617dd9c89399583890927.base_layers,
+                layer_control_2fad23d7ff2617dd9c89399583890927.overlays,
+                {"autoZIndex": true, "collapsed": false, "position": "topright"}
+            ).addTo(map_5ae6034d8eb0b19ccd7c61455d5f4d7b);
+        
+</script>
+</html>

@@ -1,0 +1,8 @@
+{
+  "datasetId": "sibra_gtfs",
+  "datasetVersion": "v0.1",
+  "source": "https://www.data.gouv.fr/api/1/datasets/r/8b12f6db-9aa7-43dc-a179-013998a1c4c0",
+  "sourceType": "gtfs",
+  "extractionDate": "2026-01-20",
+  "notes": "GTFS zip snapshot downloaded from transport.data.gouv.fr. shapes.geojson derived from shapes.txt with route data from trips.txt/routes.txt."
+}
