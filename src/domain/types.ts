@@ -6,7 +6,10 @@ export type LayerType =
   | 'annecySibraRoutes'
   | 'annecySibraStops'
   | 'annecyTerritory'
-  | 'annecySibraVehicles';
+  | 'annecySibraVehicles'
+  | 'schools74'
+  | 'schoolWalkingZones'
+  | 'schoolBusWalkingZones';
 
 export interface Source {
   id: string;

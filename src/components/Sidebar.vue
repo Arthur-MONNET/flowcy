@@ -1,5 +1,5 @@
 <template>
-  <aside class="flex h-full flex-col gap-6 overflow-y-auto border-r border-slate-200 bg-slate-50 p-6">
+  <aside class="flex h-full flex-col gap-6 overflow-y-auto bg-slate-50 p-6">
     <header class="space-y-2">
       <h1 class="text-2xl font-semibold text-ink">{{ t('ui.title') }}</h1>
       <p class="text-sm text-slate-600">{{ t('ui.subtitle') }}</p>
@@ -21,10 +21,10 @@
             :checked="persona.id === activePersonaId"
             @change="setPersona(persona.id)"
           />
-          <div>
-            <div class="text-sm font-medium text-slate-800">{{ t(persona.labelKey) }}</div>
-            <div class="text-xs text-slate-500">{{ t(persona.summaryKey) }}</div>
-          </div>
+          <span class="block">
+            <span class="block text-sm font-medium text-slate-800">{{ t(persona.labelKey) }}</span>
+            <span class="block text-xs text-slate-500">{{ t(persona.summaryKey) }}</span>
+          </span>
         </label>
       </div>
     </section>

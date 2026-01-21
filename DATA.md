@@ -119,6 +119,10 @@ Example:
 - `https://annecy-mobilites.latitude-cartagene.com/api/file?name={routeId}~{hash}&folder=stops&ext=json`: stops per route.
 - `https://annecy-mobilites.latitude-cartagene.com/api/file?name=territory_outline&folder=map&ext=geojson`: territory outline.
 - `https://annecy-mobilites.latitude-cartagene.com/api/vehicles-positions?route_id={routeId}`: realtime vehicle positions for a route.
+- `https://data.education.gouv.fr/api/v2/catalog/datasets/fr-en-adresse-et-geolocalisation-etablissements-premier-et-second-degre/records`: colleges and high schools (filtered by departement 74).
+- `https://data.education.gouv.fr/api/v2/catalog/datasets/fr-en-college-effectifs-niveau-sexe-lv/records`: college enrollments by level/sex/language.
+- `https://data.education.gouv.fr/api/v2/catalog/datasets/fr-en-lycee_gt-effectifs-niveau-sexe-lv/records`: general/technical high school enrollments.
+- `https://data.education.gouv.fr/api/v2/catalog/datasets/fr-en-lycee_pro-effectifs-niveau-sexe-lv/records`: vocational high school enrollments.
 
 ## Notes
 - Assumption: data stays local and versioned in `datasets/`.

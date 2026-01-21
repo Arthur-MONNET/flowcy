@@ -6,6 +6,9 @@ export const LAYER_IDS = {
   annecySibraStops: 'annecySibraStops',
   annecyTerritory: 'annecyTerritory',
   annecySibraVehicles: 'annecySibraVehicles',
+  schools74: 'schools74',
+  schoolWalkingZones: 'schoolWalkingZones',
+  schoolBusWalkingZones: 'schoolBusWalkingZones',
 } as const;
 
 export const MAP_CONSTANTS = {
@@ -39,7 +42,43 @@ export const layers: LayerDefinition[] = [
     type: 'annecySibraVehicles',
     isDefaultOn: false,
   },
+  {
+    id: LAYER_IDS.schools74,
+    labelKey: 'layers.schools74.label',
+    type: 'schools74',
+    isDefaultOn: false,
+  },
+  {
+    id: LAYER_IDS.schoolWalkingZones,
+    labelKey: 'layers.schoolWalkingZones.label',
+    type: 'schoolWalkingZones',
+    isDefaultOn: false,
+  },
+  {
+    id: LAYER_IDS.schoolBusWalkingZones,
+    labelKey: 'layers.schoolBusWalkingZones.label',
+    type: 'schoolBusWalkingZones',
+    isDefaultOn: false,
+  },
 ];
+
+export const SCHOOL_PUBLIC_TRANSPORT_SHARE = {
+  primary: 0.15,
+  college: 0.45,
+  lycee: 0.3,
+} as const;
+
+export const SCHOOL_WALKING_SHARE = {
+  primary: 0.5,
+  college: 0.3,
+  lycee: 0.2,
+} as const;
+
+export const SCHOOL_WALKING_SPEED_KMH = {
+  primary: 3.5,
+  college: 4.0,
+  lycee: 4.5,
+} as const;
 
 export const personas: Persona[] = [
   {
@@ -57,13 +96,5 @@ export const personas: Persona[] = [
     rhythm: 'evening',
     dominantMode: 'bike',
     summaryKey: 'personas.students-multi.summary',
-  },
-  {
-    id: 'family-weekend',
-    labelKey: 'personas.family-weekend.label',
-    ageRange: '30-45',
-    rhythm: 'weekend',
-    dominantMode: 'car',
-    summaryKey: 'personas.family-weekend.summary',
   },
 ];
