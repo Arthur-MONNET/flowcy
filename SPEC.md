@@ -39,5 +39,61 @@ Flowcy is a generic web tool to analyze and visualize customer flows using terri
 - Placeholder: exact scoring formula pending Agent B.
 - Placeholder: minimal candidate comparison UI (list-based).
 
+## Scoring v1 (Definition)
+### Catchment Rules
+- Default catchment radius by source category:
+  - education: 800 m
+  - residential: 1200 m
+  - leisure: 1000 m
+  - other: 900 m
+- Distance is measured as straight line (no routing).
+- If a source has a custom radius, it overrides the default category radius.
+
+### Score Formula
+For a candidate location:
+- For each source within its catchment radius:
+  - sourceContribution = source.weight * persona.sourceWeight
+  - distanceFactor = 1 - (distanceToCandidate / catchmentRadius)
+  - contribution = sourceContribution * distanceFactor
+- For each attraction within its influence radius:
+  - attractionPenalty = attraction.influence * persona.attractionWeight
+  - distanceFactor = 1 - (distanceToCandidate / attractionRadius)
+  - penalty = attractionPenalty * distanceFactor
+- Total score = clamp( (sum(contribution) - sum(penalty)) * persona.globalWeight, 0, 1 )
+
+### Weights (v1 Defaults)
+- persona.sourceWeight = 1.0
+- persona.attractionWeight = 0.7
+- persona.globalWeight = 1.0
+
+### Limitations
+- Straight-line distance only; no travel time modeling.
+- Linear weights; no saturation effects.
+- Scores are relative and depend on dataset coverage.
+
 ## Versioning
 - This is v0.1. All decisions are reversible.
+
+## Agent Feedback: Improvements on Current Features (v0.1+)
+### Product Scope (Agent A)
+- Clarify the candidate comparison UX: list view with score, distance to sources, and main influences.
+- Lock MVP priorities: layers + personas + basic score, defer advanced analytics to v0.2.
+- Add a short glossary and explicit non-goals to avoid feature creep.
+
+### Method & Domain (Agent B)
+- Define the v1 scoring formula and its limitations (linear weights, proxy catchments).
+- Make catchment rules explicit (default radius per source category).
+- Document assumptions and potential bias for each dataset type.
+
+### UI & Map (Agents D + E)
+- Add layer legends, visible units, and a "what am I seeing?" tooltip per layer.
+- Ensure map state and sidebar state stay consistent on toggles and selection.
+- Add performance guardrails: simplified geometry, clustering for large points.
+
+### Data & Contracts (Agents C + F)
+- Require dataset metadata (source, date, accuracy) and schema versioning.
+- Enforce strict TypeScript contracts for datasets and stores.
+
+### QA & Release (Agent G)
+- Add a smoke-test checklist for layers, persona change, and scoring.
+- Define minimal CI steps: lint, typecheck, build.

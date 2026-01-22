@@ -1,10 +1,10 @@
 <template>
   <section class="space-y-3">
-    <div class="text-sm font-semibold uppercase tracking-wide text-slate-500">{{ t('ui.settings') }}</div>
+    <div class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">{{ t('ui.settings') }}</div>
     <label class="space-y-2 text-sm text-slate-700">
       <span class="font-medium">{{ t('ui.language') }}</span>
       <select
-        class="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm"
+        class="panel-input w-full rounded-xl px-3 py-2 text-sm"
         :value="currentLanguage"
         @change="onChange"
       >

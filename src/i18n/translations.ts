@@ -28,6 +28,7 @@ export const translations = {
       schools74: { label: 'Schools (dept 74)' },
       schoolWalkingZones: { label: 'School walking zones' },
       schoolBusWalkingZones: { label: 'School bus + walk zones' },
+      inseeResidentialDensity: { label: 'Residential density (INSEE 200m)' },
     },
     layerTypes: {
       bikeshare: 'Bikeshare',
@@ -38,19 +39,24 @@ export const translations = {
       schools74: 'Education',
       schoolWalkingZones: 'Walking',
       schoolBusWalkingZones: 'Transit',
+      residentialDensity: 'Density',
     },
     personas: {
-      'after-school-teens': {
-        label: 'After-school teens',
-        summary: 'Short trips after school, low willingness to walk uphill.'
+      kindergarten: {
+        label: 'Kindergarten',
+        summary: 'Very short trips, strong safety constraints, mostly walking.'
       },
-      'students-multi': {
-        label: 'Multi-activity students',
-        summary: 'Flexible schedules, accept longer trips for diverse venues.'
+      primary: {
+        label: 'Primary school',
+        summary: 'Short trips, walking preferred, parent-assisted mobility.'
       },
-      'family-weekend': {
-        label: 'Weekend families',
-        summary: 'Prefer parking and multi-stop itineraries.'
+      college: {
+        label: 'Middle school',
+        summary: 'Medium trips, bus + walk is common, moderate autonomy.'
+      },
+      lycee: {
+        label: 'High school',
+        summary: 'Longer trips, higher autonomy, public transport focus.'
       },
     },
     modes: {
@@ -69,6 +75,12 @@ export const translations = {
       legendBusStop: 'Bus stop',
       legendBusVehicle: 'Realtime bus',
       legendBikeStation: 'Bike station',
+      legendResidentialDensityLow: 'Residential density: low',
+      legendResidentialDensityMid: 'Residential density: medium',
+      legendResidentialDensityHigh: 'Residential density: high',
+      legendResidentialDensityVeryHigh: 'Residential density: very high',
+      residentialDensityLabel: 'Residential density',
+      populationLabel: 'Population',
       lineLabel: 'Line',
       stationLabel: 'Station',
       bikesAvailableLabel: 'Bikes available',
@@ -120,6 +132,7 @@ export const translations = {
       schools74: { label: 'Etablissements scolaires (74)' },
       schoolWalkingZones: { label: 'Zones pedestres scolaires' },
       schoolBusWalkingZones: { label: 'Zones bus + marche scolaires' },
+      inseeResidentialDensity: { label: 'Residential density (INSEE 200m)' },
     },
     layerTypes: {
       bikeshare: 'Velos',
@@ -130,19 +143,24 @@ export const translations = {
       schools74: 'Education',
       schoolWalkingZones: 'Marche',
       schoolBusWalkingZones: 'Transport',
+      residentialDensity: 'Density',
     },
     personas: {
-      'after-school-teens': {
-        label: 'Ados apres les cours',
-        summary: 'Trajets courts apres l ecole, faible tolerance aux pentes.'
+      kindergarten: {
+        label: 'Kindergarten',
+        summary: 'Very short trips, strong safety constraints, mostly walking.'
       },
-      'students-multi': {
-        label: 'Etudiants multi-activites',
-        summary: 'Horaires flexibles, acceptent des trajets plus longs.'
+      primary: {
+        label: 'Primary school',
+        summary: 'Short trips, walking preferred, parent-assisted mobility.'
       },
-      'family-weekend': {
-        label: 'Familles du week-end',
-        summary: 'Priorite au parking et aux trajets multi-etapes.'
+      college: {
+        label: 'Middle school',
+        summary: 'Medium trips, bus + walk is common, moderate autonomy.'
+      },
+      lycee: {
+        label: 'High school',
+        summary: 'Longer trips, higher autonomy, public transport focus.'
       },
     },
     modes: {
@@ -161,6 +179,12 @@ export const translations = {
       legendBusStop: 'Arret bus',
       legendBusVehicle: 'Bus temps reel',
       legendBikeStation: 'Station velo',
+      legendResidentialDensityLow: 'Residential density: low',
+      legendResidentialDensityMid: 'Residential density: medium',
+      legendResidentialDensityHigh: 'Residential density: high',
+      legendResidentialDensityVeryHigh: 'Residential density: very high',
+      residentialDensityLabel: 'Residential density',
+      populationLabel: 'Population',
       lineLabel: 'Ligne',
       stationLabel: 'Station',
       bikesAvailableLabel: 'Velos disponibles',

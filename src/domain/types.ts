@@ -1,6 +1,7 @@
 export type SourceCategory = 'education' | 'residential' | 'activity' | 'commercial';
 export type MobilityMode = 'walk' | 'bike' | 'bus' | 'car';
 export type PersonaRhythm = 'afterSchool' | 'daytime' | 'evening' | 'weekend';
+export type SchoolCategory = 'primary' | 'college' | 'lycee';
 export type LayerType =
   | 'bikeshare'
   | 'annecySibraRoutes'
@@ -9,7 +10,8 @@ export type LayerType =
   | 'annecySibraVehicles'
   | 'schools74'
   | 'schoolWalkingZones'
-  | 'schoolBusWalkingZones';
+  | 'schoolBusWalkingZones'
+  | 'residentialDensity';
 
 export interface Source {
   id: string;
@@ -43,6 +45,7 @@ export interface Persona {
   rhythm: PersonaRhythm;
   dominantMode: MobilityMode;
   summaryKey: string;
+  schoolCategories: SchoolCategory[];
 }
 
 export interface LayerDefinition {

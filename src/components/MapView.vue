@@ -13,6 +13,7 @@ import {
   SCHOOL_PUBLIC_TRANSPORT_SHARE,
   SCHOOL_WALKING_SHARE,
   SCHOOL_WALKING_SPEED_KMH,
+  personas,
 } from '../data/sampleData';
 import {
   fetchInitApplication,
@@ -54,6 +55,13 @@ const COLORS = {
   schoolNursery: '#22c55e',
 } as const;
 
+const RESIDENTIAL_DENSITY_STOPS = [
+  { max: 500, color: '#fef3c7' },
+  { max: 1500, color: '#fdba74' },
+  { max: 3000, color: '#fb923c' },
+  { max: Number.POSITIVE_INFINITY, color: '#c2410c' },
+] as const;
+
 const BUS_WALK_PANE_OPACITY = 0.6;
 const PANE_PREFIX = 'flowcy-layer-';
 
@@ -69,6 +77,7 @@ let annecyVehiclesLoaded = false;
 let schoolsLoaded = false;
 let schoolZonesLoaded = false;
 let schoolBusZonesLoaded = false;
+let residentialDensityLoaded = false;
 let schoolEnrollmentCache: Map<string, SchoolEnrollment> | null = null;
 let schoolRecordsCache: EducationRecord[] | null = null;
 let gtfsStopsCache: Map<string, GtfsStop> | null = null;
@@ -90,6 +99,7 @@ const createLayerGroups = () => ({
   [LAYER_IDS.schools74]: L.layerGroup(),
   [LAYER_IDS.schoolWalkingZones]: L.layerGroup(),
   [LAYER_IDS.schoolBusWalkingZones]: L.layerGroup(),
+  [LAYER_IDS.inseeResidentialDensity]: L.layerGroup(),
 });
 
 const updateLayerPanes = () => {
@@ -158,6 +168,11 @@ const loadBikeshareStations = async (group: LayerGroup) => {
 const formatYesNo = (value: boolean) => (value ? t('ui.yes') : t('ui.no'));
 const REALTIME_REFRESH_MS = 5000;
 
+const getResidentialDensityColor = (density: number) => {
+  const normalized = Number.isFinite(density) ? density : 0;
+  return RESIDENTIAL_DENSITY_STOPS.find((stop) => normalized <= stop.max)?.color ?? '#c2410c';
+};
+
 const loadAnnecyTerritory = async (group: LayerGroup) => {
   try {
     const geojson = await fetchTerritoryOutline();
@@ -172,6 +187,38 @@ const loadAnnecyTerritory = async (group: LayerGroup) => {
     }).addTo(group);
   } catch (error) {
     console.warn('Failed to load Annecy territory', error);
+  }
+};
+
+const loadResidentialDensity = async (group: LayerGroup) => {
+  try {
+    group.clearLayers();
+    const response = await fetch('/datasets/insee/filosofi2015_carreaux_200m_74.geojson');
+    if (!response.ok) {
+      return;
+    }
+    const geojson = await response.json();
+    L.geoJSON(geojson, {
+      style: (feature) => {
+        const density = Number(feature?.properties?.density ?? 0);
+        return {
+          color: 'transparent',
+          weight: 0,
+          fillColor: getResidentialDensityColor(density),
+          fillOpacity: 0.55,
+          pane: getPaneName(LAYER_IDS.inseeResidentialDensity),
+        };
+      },
+      onEachFeature: (feature, layer) => {
+        const density = Number(feature?.properties?.density ?? 0);
+        const population = Number(feature?.properties?.population ?? 0);
+        layer.bindPopup(
+          `<strong>${t('layers.inseeResidentialDensity.label')}</strong><br/>${t('map.residentialDensityLabel')}: ${Math.round(density)} / km2<br/>${t('map.populationLabel')}: ${Math.round(population)}`
+        );
+      },
+    }).addTo(group);
+  } catch (error) {
+    console.warn('Failed to load residential density', error);
   }
 };
 
@@ -419,6 +466,11 @@ const getSchoolCategory = (type: string) => {
   return 'primary';
 };
 
+const getActivePersonaSchoolCategories = () => {
+  const active = personas.find((persona) => persona.id === mapStore.activePersonaId) ?? personas[0];
+  return active?.schoolCategories ?? ['primary', 'college', 'lycee'];
+};
+
 const getFallbackEnrollment = (type: string) => {
   if (type.startsWith('ECOLE')) {
     return 112;
@@ -593,7 +645,8 @@ const runDijkstra = (graph: BusStopGraph, sourceStopId: string, cutoffSeconds: n
   return distances;
 };
 
-const buildSchoolBusWalkCacheKey = () => `${mapStore.walkingMinutes}:${mapStore.busWalkMaxMinutes}`;
+const buildSchoolBusWalkCacheKey = () =>
+  `${mapStore.activePersonaId}:${mapStore.walkingMinutes}:${mapStore.busWalkMaxMinutes}`;
 
 const buildSchoolBusWalkCache = async (): Promise<SchoolBusWalkCache> => {
   const [schools, stopsById, graph] = await Promise.all([getSchoolsData(), getGtfsStops(), getGtfsGraph()]);
@@ -601,6 +654,7 @@ const buildSchoolBusWalkCache = async (): Promise<SchoolBusWalkCache> => {
   const maxTotalSeconds = mapStore.busWalkMaxMinutes * 60;
   const byStop = new Map<string, BusWalkStopDemand>();
   const bySchool = new Map<string, BusWalkTarget[]>();
+  const activeCategories = getActivePersonaSchoolCategories();
 
   if (maxTotalSeconds <= 0) {
     return {
@@ -618,6 +672,9 @@ const buildSchoolBusWalkCache = async (): Promise<SchoolBusWalkCache> => {
       return;
     }
     const category = getSchoolCategory(school.nature_uai_libe);
+    if (!activeCategories.includes(category)) {
+      return;
+    }
     const speedKmH = SCHOOL_WALKING_SPEED_KMH[category];
     const speedMps = (speedKmH * 1000) / 3600;
     const schoolRadiusMeters = (speedKmH * mapStore.walkingMinutes * 1000) / 60;
@@ -720,6 +777,7 @@ const loadSchools74 = async (group: LayerGroup) => {
     group.clearLayers();
     const schools = await getSchoolsData();
     const enrollments = await getSchoolEnrollments(schools);
+    const activeCategories = getActivePersonaSchoolCategories();
     schools.forEach((school) => {
       const lat = Number(school.latitude);
       const lon = Number(school.longitude);
@@ -727,6 +785,10 @@ const loadSchools74 = async (group: LayerGroup) => {
         return;
       }
       const type = school.nature_uai_libe;
+      const category = getSchoolCategory(type);
+      if (!activeCategories.includes(category)) {
+        return;
+      }
       const isPrimarySchool = type.startsWith('ECOLE');
       const color =
         isPrimarySchool
@@ -770,6 +832,7 @@ const loadSchoolWalkingZones = async (group: LayerGroup) => {
     const schools = await getSchoolsData();
     const enrollments = await getSchoolEnrollments(schools);
     const minutes = mapStore.walkingMinutes;
+    const activeCategories = getActivePersonaSchoolCategories();
 
     schools.forEach((school) => {
       const lat = Number(school.latitude);
@@ -779,6 +842,9 @@ const loadSchoolWalkingZones = async (group: LayerGroup) => {
       }
       const type = school.nature_uai_libe;
       const category = getSchoolCategory(type);
+      if (!activeCategories.includes(category)) {
+        return;
+      }
       const speed = SCHOOL_WALKING_SPEED_KMH[category];
       const radiusMeters = (speed * minutes * 1000) / 60;
       const enrollment = enrollments.get(school.numero_uai);
@@ -940,6 +1006,10 @@ const ensureAnnecyLayers = () => {
     schoolBusZonesLoaded = true;
     loadSchoolBusWalkingZones(layerGroups[LAYER_IDS.schoolBusWalkingZones]);
   }
+  if (mapStore.activeLayerIds.includes(LAYER_IDS.inseeResidentialDensity) && !residentialDensityLoaded) {
+    residentialDensityLoaded = true;
+    loadResidentialDensity(layerGroups[LAYER_IDS.inseeResidentialDensity]);
+  }
   if (!mapStore.activeLayerIds.includes(LAYER_IDS.annecySibraVehicles)) {
     stopVehiclesRefresh();
     layerGroups[LAYER_IDS.annecySibraVehicles].clearLayers();
@@ -956,6 +1026,10 @@ const ensureAnnecyLayers = () => {
   if (!mapStore.activeLayerIds.includes(LAYER_IDS.schoolBusWalkingZones)) {
     layerGroups[LAYER_IDS.schoolBusWalkingZones].clearLayers();
     schoolBusZonesLoaded = false;
+  }
+  if (!mapStore.activeLayerIds.includes(LAYER_IDS.inseeResidentialDensity)) {
+    layerGroups[LAYER_IDS.inseeResidentialDensity].clearLayers();
+    residentialDensityLoaded = false;
   }
 };
 
@@ -978,6 +1052,7 @@ const resetAnnecyLayers = () => {
   schoolsLoaded = false;
   schoolZonesLoaded = false;
   schoolBusZonesLoaded = false;
+  residentialDensityLoaded = false;
   gtfsStopsCache = null;
   gtfsGraphCache = null;
   gtfsDijkstraCache.clear();
@@ -1081,6 +1156,25 @@ watch(
     if (mapStore.activeLayerIds.includes(LAYER_IDS.annecySibraStops)) {
       annecyStopsLoaded = false;
       loadAnnecySibraStops(layerGroups[LAYER_IDS.annecySibraStops]);
+    }
+  }
+);
+
+watch(
+  () => mapStore.activePersonaId,
+  () => {
+    if (!layerGroups) {
+      return;
+    }
+    schoolBusWalkCache = null;
+    if (mapStore.activeLayerIds.includes(LAYER_IDS.schools74)) {
+      loadSchools74(layerGroups[LAYER_IDS.schools74]);
+    }
+    if (mapStore.activeLayerIds.includes(LAYER_IDS.schoolWalkingZones)) {
+      loadSchoolWalkingZones(layerGroups[LAYER_IDS.schoolWalkingZones]);
+    }
+    if (mapStore.activeLayerIds.includes(LAYER_IDS.schoolBusWalkingZones)) {
+      loadSchoolBusWalkingZones(layerGroups[LAYER_IDS.schoolBusWalkingZones]);
     }
   }
 );

@@ -1,17 +1,14 @@
 <template>
   <div class="fixed left-0 top-0 z-50 h-full">
-    <div
-      class="flex h-full flex-col border-r border-slate-200 shadow-xl transition-all duration-200 ease-out"
-      :class="panelClass"
-    >
+    <div class="flex h-full flex-col panel-surface transition-all duration-300 ease-out" :class="panelClass">
       <header
-        class="flex h-11 items-center justify-between border-b border-slate-200 px-3 text-slate-700"
+        class="panel-header flex h-12 items-center justify-between border-b border-white/60 px-3 text-slate-700"
         :class="headerClass"
       >
         <button
           v-if="state === 'collapsed'"
           type="button"
-          class="flex h-8 w-8 items-center justify-center rounded-md border border-slate-200 bg-white/90 text-slate-600 hover:bg-white"
+          class="panel-icon-button flex h-9 w-9 items-center justify-center rounded-md"
           :aria-label="t('ui.openPanelLabel')"
           @click="setState('peek')"
         >
@@ -22,7 +19,7 @@
             />
           </svg>
         </button>
-        <div v-else class="flex items-center gap-2 text-sm font-semibold">
+        <div v-else class="flex items-center gap-2 text-sm font-semibold text-slate-800">
           <svg viewBox="0 0 20 20" aria-hidden="true" class="h-4 w-4">
             <path
               fill="currentColor"
@@ -32,13 +29,13 @@
           <span>{{ t('ui.layers') }}</span>
         </div>
         <div class="flex items-center gap-2">
-          <span v-if="state === 'collapsed'" class="text-xs font-semibold text-slate-500">
+          <span v-if="state === 'collapsed'" class="rounded-full bg-white/80 px-2 py-0.5 text-xs font-semibold text-slate-600">
             {{ activeCount }}
           </span>
           <button
             v-else
             type="button"
-            class="flex h-8 w-8 items-center justify-center rounded-md border border-slate-200 bg-white/90 text-slate-600 hover:bg-white"
+            class="panel-icon-button flex h-9 w-9 items-center justify-center rounded-md"
             :aria-label="t('ui.closePanelLabel')"
             @click="setState('collapsed')"
           >
@@ -52,7 +49,7 @@
           <button
             v-if="state !== 'collapsed'"
             type="button"
-            class="flex h-8 w-8 items-center justify-center rounded-md border border-slate-200 bg-white/90 text-slate-600 hover:bg-white"
+            class="panel-icon-button flex h-9 w-9 items-center justify-center rounded-md"
             :aria-label="state === 'pinned' ? t('ui.unpinPanelLabel') : t('ui.pinPanelLabel')"
             @click="togglePin"
           >
@@ -69,14 +66,14 @@
       </header>
       <div v-if="state !== 'collapsed'" class="flex-1 overflow-y-auto">
         <slot />
-        <div class="border-t border-slate-200 px-6 py-4">
+        <div class="border-t border-white/60 px-6 py-4">
           <Legend />
         </div>
       </div>
     </div>
     <div
       v-if="state === 'collapsed'"
-      class="pointer-events-auto absolute left-16 top-4 rounded-lg border border-slate-200 bg-white/90 p-3 shadow-lg backdrop-blur"
+      class="pointer-events-auto absolute left-16 top-4 rounded-xl border border-white/60 bg-white/85 p-3 shadow-lg backdrop-blur"
     >
       <Legend />
     </div>
@@ -101,12 +98,12 @@ const { t } = useI18n();
 
 const panelClass = computed(() => {
   if (props.state === 'collapsed') {
-    return 'w-14 bg-white/70 backdrop-blur';
+    return 'w-14';
   }
   if (props.state === 'peek') {
-    return 'w-full bg-white/85 backdrop-blur sm:w-[300px]';
+    return 'w-full sm:w-[320px]';
   }
-  return 'w-full bg-white sm:w-[380px]';
+  return 'w-full sm:w-[400px]';
 });
 
 const headerClass = computed(() => (props.state === 'collapsed' ? 'justify-center' : ''));

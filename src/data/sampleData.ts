@@ -9,6 +9,7 @@ export const LAYER_IDS = {
   schools74: 'schools74',
   schoolWalkingZones: 'schoolWalkingZones',
   schoolBusWalkingZones: 'schoolBusWalkingZones',
+  inseeResidentialDensity: 'inseeResidentialDensity',
 } as const;
 
 export const MAP_CONSTANTS = {
@@ -60,6 +61,12 @@ export const layers: LayerDefinition[] = [
     type: 'schoolBusWalkingZones',
     isDefaultOn: false,
   },
+  {
+    id: LAYER_IDS.inseeResidentialDensity,
+    labelKey: 'layers.inseeResidentialDensity.label',
+    type: 'residentialDensity',
+    isDefaultOn: false,
+  },
 ];
 
 export const SCHOOL_PUBLIC_TRANSPORT_SHARE = {
@@ -82,19 +89,39 @@ export const SCHOOL_WALKING_SPEED_KMH = {
 
 export const personas: Persona[] = [
   {
-    id: 'after-school-teens',
-    labelKey: 'personas.after-school-teens.label',
-    ageRange: '12-17',
-    rhythm: 'afterSchool',
-    dominantMode: 'bus',
-    summaryKey: 'personas.after-school-teens.summary',
+    id: 'kindergarten',
+    labelKey: 'personas.kindergarten.label',
+    ageRange: '3-5',
+    rhythm: 'daytime',
+    dominantMode: 'walk',
+    summaryKey: 'personas.kindergarten.summary',
+    schoolCategories: ['primary'],
   },
   {
-    id: 'students-multi',
-    labelKey: 'personas.students-multi.label',
-    ageRange: '18-24',
-    rhythm: 'evening',
-    dominantMode: 'bike',
-    summaryKey: 'personas.students-multi.summary',
+    id: 'primary',
+    labelKey: 'personas.primary.label',
+    ageRange: '6-10',
+    rhythm: 'daytime',
+    dominantMode: 'walk',
+    summaryKey: 'personas.primary.summary',
+    schoolCategories: ['primary'],
+  },
+  {
+    id: 'college',
+    labelKey: 'personas.college.label',
+    ageRange: '11-14',
+    rhythm: 'daytime',
+    dominantMode: 'bus',
+    summaryKey: 'personas.college.summary',
+    schoolCategories: ['college'],
+  },
+  {
+    id: 'lycee',
+    labelKey: 'personas.lycee.label',
+    ageRange: '15-18',
+    rhythm: 'daytime',
+    dominantMode: 'bus',
+    summaryKey: 'personas.lycee.summary',
+    schoolCategories: ['lycee'],
   },
 ];

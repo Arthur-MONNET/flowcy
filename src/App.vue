@@ -1,6 +1,11 @@
 <template>
-  <div class="relative h-screen w-screen overflow-hidden">
-    <div class="relative z-0 h-full w-full" :class="{ 'sm:pl-[380px]' : panelState === 'pinned' }">
+  <div class="app-shell relative h-screen w-screen overflow-hidden">
+    <div class="pointer-events-none absolute inset-0 z-0">
+      <div class="ambient-orb orb-1"></div>
+      <div class="ambient-orb orb-2"></div>
+      <div class="ambient-grid"></div>
+    </div>
+    <div class="relative z-10 h-full w-full" :class="{ 'sm:pl-[400px]' : panelState === 'pinned' }">
       <MapView @map-interaction="onMapInteraction" />
     </div>
     <LeftPanel :state="panelState" :active-count="activeLayersCount" @update:state="setPanelState">

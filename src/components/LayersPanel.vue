@@ -1,17 +1,17 @@
 <template>
   <section class="space-y-3">
-    <div class="text-sm font-semibold uppercase tracking-wide text-slate-500">{{ t('ui.layers') }}</div>
+    <div class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">{{ t('ui.layers') }}</div>
     <div class="space-y-2">
       <label
         v-for="layer in orderedLayers"
         :key="layer.id"
-        class="flex items-center gap-3 rounded-lg border border-slate-200 bg-white px-3 py-2 shadow-sm transition-transform duration-150 ease-out"
+        class="panel-card flex items-center gap-3 rounded-2xl px-3 py-2 transition-transform duration-150 ease-out hover:-translate-y-0.5"
         :class="getRowClass(layer.id)"
         @dragover.prevent="onDragOver(layer.id)"
         @drop.prevent="onDrop(layer.id)"
       >
         <span
-          class="cursor-grab select-none text-xs font-semibold text-slate-400"
+          class="rounded-full bg-slate-100 px-1.5 py-0.5 text-xs font-semibold text-slate-400"
           draggable="true"
           @dragstart="onDragStart(layer.id)"
           @dragend="onDragEnd"
@@ -21,7 +21,7 @@
         </span>
         <input
           type="checkbox"
-          class="h-4 w-4"
+          class="h-4 w-4 accent-[var(--accent)]"
           :checked="activeLayerIds.includes(layer.id)"
           @change="toggleLayer(layer.id)"
         />
@@ -31,7 +31,7 @@
         </span>
       </label>
     </div>
-    <div class="rounded-lg border border-slate-200 bg-white px-3 py-2 shadow-sm">
+    <div class="panel-card rounded-2xl px-3 py-2">
       <label class="text-xs font-semibold uppercase tracking-wide text-slate-500">
         {{ t('ui.walkingMinutesLabel') }}
       </label>
@@ -42,12 +42,12 @@
           min="1"
           max="60"
           step="1"
-          class="h-9 w-20 rounded-md border border-slate-200 px-2 text-sm text-slate-800"
+          class="panel-input h-9 w-20 rounded-md px-2 text-sm text-slate-800"
         />
         <span class="text-xs text-slate-500">{{ t('ui.minutesSuffix') }}</span>
       </div>
     </div>
-    <div class="rounded-lg border border-slate-200 bg-white px-3 py-2 shadow-sm">
+    <div class="panel-card rounded-2xl px-3 py-2">
       <label class="text-xs font-semibold uppercase tracking-wide text-slate-500">
         {{ t('ui.busWalkMinutesLabel') }}
       </label>
@@ -58,7 +58,7 @@
           min="0"
           max="120"
           step="1"
-          class="h-9 w-20 rounded-md border border-slate-200 px-2 text-sm text-slate-800"
+          class="panel-input h-9 w-20 rounded-md px-2 text-sm text-slate-800"
         />
         <span class="text-xs text-slate-500">{{ t('ui.minutesSuffix') }}</span>
       </div>
